@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css语法
+            声明:一个属性就是一个声明 就是用来修改标签样式
+            声明块:多个声明就是声明块
+            属性书写规则:属性名和属性值之间使用 : 隔开
+            多对属性之间使用 ; 隔开
+            最后一对属性可以不加 ; 一般建议加上;
+        */
+        /* css规则集 选择器{}*/
+        /* 2.css注释 ctrl+/ */
+        /* 3.速记写法 一个属性是由多个属性简写而来的 */
+        div{
+            color:red;
+            font-size: 28px;
+            /* border:width style color */
+            border: 1px solid blue;
+            /* border-top-width: 10px;
+            border-top-color: dashed;
+            border-top-color: blue; */
+        }
+        /* 利用css中border绘制一个三角形 */
+        .two{
+            width: 0;
+            height: 0;
+            /* 先隐藏所有的三角形 放开一个三角形 */
+            border: 100px solid transparent;
+            border-top: 100px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>我是一个DIV</div>
+    <div class="two"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .div1{
+            background-color: yellow;
+        }
+        .div2{
+            background-color: red;
+            /* 相对定位 position:relative */
+            /* 特性:不脱离文档流 原先位置保留 相对于自身在浏览器中的默认位置进行定位
+             */
+             position: relative;
+             /* 配合属性 top bottom left right 同一方向属性只能选一个 */
+             top:40px;
+             left:40px;
+        }
+        .div3{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</body>
+</html

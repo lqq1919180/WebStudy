@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 属性选择器 -->
+    <style>
+        /* div[id='one'] {
+            background-color: red;
+        }
+
+        input[type='password'] {
+            background-color: pink;
+        } */
+        /* 选中以name开头user属性名 css2 [name]='user' */
+        /* input[name |='user']{
+            background-color: cyan;
+        } */
+        /* css3属性选择器 以user开头 */
+        /* input[name^='user']{
+            background-color: cyan;
+        } */
+        /* 以某一个属性结尾 */
+        /* input[name$='name']{
+            background-color: pink;
+        } */
+        /* css2 选中name属性包含name属性名的标签 */
+        input[name~='username'] {
+            background-color: red;
+        }
+
+        /* css3 只要属性值包含某一部分 */
+        input[name*='us'] {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">我是一个DIV</div>
+    <input type="password">
+    <input type="text" name="username">
+    <input type="text" name="user-name">
+</body>
+
+</html>

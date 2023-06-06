@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 伪元素选择器: :开头 在p标签开始部分添加一些东西*/
+        p::before {
+            content: "我是:: before";
+        }
+
+        p::after {
+            content: "我是::after";
+        }
+
+        /* 选择p标签的第一个文字/字符 */
+        p::first-letter {
+            font-size: 28px;
+            color: yellow;
+        }
+
+        /* 选中p标签第一行文字 */
+        p::first-line {
+            color: rgb(238, 35, 69);
+        }
+    </style>
+</head>
+
+<body>
+    <p>段落标签段落标签段落标签段落标签段落标签段落标签段落标
+        <br>
+        段落标签段落标签段落标签段落标签段落标签段落标签段落标
+        <br>
+        段落标签段落标签段落标签段落标签段落标签段落标签段落标
+    </p>
+    <br>
+
+</body>
+
+</html>

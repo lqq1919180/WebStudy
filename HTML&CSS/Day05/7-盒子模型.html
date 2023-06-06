@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.盒模型:标准盒子 内容盒子 w3c盒子 */
+            /* 注意width和height是设置给内容区宽高 */
+            /* 计算公式:
+            盒子的宽:width+paddingLeft+paddingRight+borderLeft+borderRight
+            盒子的高:height+paddingTop+paddingBottom+borderTop+borderBottom
+            盒子所占页面宽:盒子宽+marginLeft+marginRight
+            盒子所占页面高:盒子高+marginTop+marginBottom
+            */
+        #contentDiv {
+            /* 默认就是内容盒子 标准盒子 可以通过box-sizing将盒子设置为内容盒子 */
+            box-sizing: content-box;
+            width: 100px;
+            height: 100px;
+            /* background-color: red; */
+            /* 线性渐变背景色 方向 to right /to right bottom /to left  to left bottom 颜色 */
+            background-image: linear-gradient(to right bottom ,red, blue, pink);
+            margin: 10px 17px 23px;
+            padding: 26px 14px 13px;
+            border: 2px solid blue;
+            /* 
+            内容盒子宽: width+左右padding+左右border 100+28px+2*2=132
+            内容盒子高: height+上下padding+上下border=100+39px+4px=143
+            内容盒子所占页面宽: 盒子宽+左右外边距    34+132=166px
+            内容盒子所占页面高: 盒子高+上下外边距 143+33=176px
+            */
+        }
+        /* 2.边框盒模型 IE盒子 边框盒子 怪异盒子 */
+            
+        #borderDiv{
+                /* 将当前盒模型设置为边框盒子 */
+                /* 注意:边框盒子的width设置给盒子本身的 */
+                /* 计算公式: */
+                    /* IE盒子宽: width=contentWidth+paddingLeft+paddingRight+borderLeft+borderRight
+                        IE盒子高: height=contentHeight+paddingTop+paddingBottom+borderTop+borderBottom
+                        IE盒子所占页面宽: 盒子宽+marginLeft+marginRight
+                        IE盒子所占页面高: 盒子高+marginTop+marginBottom
+                    */
+                box-sizing: border-box;
+                width: 100px;
+                height: 100px;
+                border: 2px solid blue;
+                margin: 17px 23px 34px;
+                padding: 26px 24px 18px;
+                /* 
+                IE盒子宽: 100 px     100-24*2-2*2=48px 盒子内容宽
+                IE盒子高: 100px      100-4-26-18=52px 盒子内容高
+                IE盒子所占页面宽:146px    100+23*2=146px
+                IE盒子所占页面高:151px    100+17+34=151px
+                */
+            }
+            /* 说一说css盒模型? */
+            /* 1.盒子种类:
+                    1.内容盒子 标准盒子 w3c盒子    
+                    2.边框盒子 IE盒子 怪异盒子
+                2.盒子区别:
+                    1.标准盒子的width和height是设置给内容区宽高
+                    2.边框盒子的width和height是直接设置给盒子本身
+            */
+    </style>
+</head>
+
+<body>
+    <div id="contentDiv">我是内容盒子</div>
+    <div id="borderDiv">我是边框盒子</div>
+</body>
+
+</html>

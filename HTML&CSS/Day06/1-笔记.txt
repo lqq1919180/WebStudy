@@ -1,0 +1,94 @@
+1.列表样式
+    list-style-type 设置列表标志项类型 disc circle square ...
+    list-style-image 自定义列表标志项
+    list-style-position 设置列表标志项位置 inside outside(默认值)
+    简写:list-style:type image position
+    取消列表标志项:list-style:none
+2.其他样式
+    display:
+        inline 将当前元素设置为行内元素
+        block 将当前元素设置为块级元素
+        inline-block 将当前元素设置为行内块元素
+    cursor 游标 pointer help
+3.隐藏元素的方式
+    1.display none 不占据原先在浏览器的位置 js事件不生效 会引起浏览器重排
+    2.visibility hidden visible(默认值) 占据原先在浏览器的位置 js事件不会生效 会引起浏览器重绘
+    3.opacity 0-1(透明度 <--0透明 -->1显示) 占据原先在浏览器的位置 js事件会生效 不一定
+4.重排和重绘
+    1.当dom(标签)的改变影响元素的几何信息(位置),浏览器计算元素的几何信息(位置)
+    将其正确的显示在浏览器，这个过程就叫重排，也叫回流
+    2.元素的外观被改变时,但是不影响元素的排列分布，浏览器将其重新绘制的过程，就叫重绘
+    重排:标签增加 删除 插入 替换 display:none
+    重绘:css一些样式 color 背景色
+5.overflow (父元素内容溢出处理)
+    auto 自适应 当内容宽高超出父元素 浏览器设置滚动条
+    scroll 滚动条 
+    hidden 超出父元素的部分隐藏起来
+6.px和em和rem区别?
+    1.px是相对单位,相对于当前设备分辨率
+    2.em是相对单位,相对于当前元素的字体大小而言, font-size:28px 1em=28px 默认1em=16px
+    3.rem是相对单位,相对于html元素的字体大小而言的，默认1rem=16px
+7.盒模型
+    1.盒子属性: width height margin padding border max-width min-width (height同理)
+    2.盒模型:
+        1.盒子种类:
+            1.1 内容盒子 标准盒子 w3c盒子 普通元素就是标准盒子 box-sizing:cntent-box
+            1.2 边框盒子 IE盒子 怪异盒子 box-sizing:border box
+        2.盒子区别:
+            2.1 内容盒子的宽高设置给内容区
+                计算公式:
+                    盒子宽:width+paddingLeft+paddingRight+borderLeft+bordeRright
+                    盒子高:height+marginTop+marginBottom+borderTop+borderBottom
+                    盒子所占页面宽:盒子宽+marginLeft+marginRight
+                    盒子所占页面高:盒子高+marginTop+marginBottom
+            2.2 边框盒子的宽高设置给盒子本身
+                计算公式:
+                    盒子宽:width = contentWidth+paddingLeft+paddingRight+borderLeft+borderRight
+                    盒子高:height = contentHeight+paddingTop+paddingBottom+borderTop+borderBottom
+                    所占页面宽:盒子宽 + marginLeft+marginRight
+                    所占页面高:盒子高 + marginTop+marginBottom
+8.盒子背景样式
+    1.设置背景色 background-color:red;
+    2.设置背景渐变色:background-image:linear-gradient(to right/ to right Bottom,pink,red,cyan)
+    3.设置背景图片 background-image:(url);
+    4.设置背景图片平铺方式 background-repeat:no-repeat /repeat-x repeat-y /repeat默认值
+    5.设置背景图片位置:background-position:水平位置 垂直位置 0-
+    6.设置背景图片平铺方式 background-attachment:scroll(背景图片随着滚动条滚动而滚动
+	) fixed(背景图片不随着滚动条滚动而滚动)
+    background:color url() repeat fixed/scroll position;
+CSS布局方式
+    浮动布局
+        可以让块级元素在一行显示
+*********外边距合并问题:
+    1.兄弟级外边距合并
+    合并出现原因:同时给兄弟元素设置一个下外边距同时设置一个上外边距 发生合并
+    合并解决方案:
+        1.只给其中一个兄弟元素设置外边距
+        2.给下边外边距开启BFC
+            1.display:inline-block/flex
+            2.position absolute/fixed
+            3.float:left
+        3.给上边兄弟元素设置一个父元素给父元素开启BFC
+            overflow hidden/auto
+    2.父子级外边距合并
+    合并出现原因:同时给父子元素设置同一个方向的一个外边距
+    合并解决方案:
+        1.给父元素设置padding属性
+        2.给父元素设置border边框
+*******BFC(Block Fomatting Context)直译块级格式化上下文
+    概念:把BFC理解为元素的一种属性,类似id title class,一旦元素拥有了这个属性,
+    就可以理解为一块独立的渲染区域，容器内的元素不会影响容器外的元素
+        1.如何触发BFC?
+            1.html文档就是bfc
+            2.float不为none
+            3.position为absolute和fixed
+            4.display属性取值inline-block，flex....
+            5.overflow不为visible hidden
+        2.BFC作用
+            1.避免外边距重叠
+            2.清除浮动
+            3.阻止浮动元素覆盖非浮动元素
+            4.两列布局 左侧顶宽 右侧自适应
+            5.三列布局 左右顶宽 中间自适应
+gitee 代码版本控制工具 码云
+position  

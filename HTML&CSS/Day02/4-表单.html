@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- form表单 表单元素都要写在form标签中 -->
+    <!-- action表示表单提交到服务器的地址 -->
+    <!-- name中放的是属性名 -->
+    <!-- value中放的是属性值 -->
+    <form action="">
+        <!-- 表单元素 -->
+        <!-- 明文输入框 -->
+        用户名:<input type="text" name="username" value="张三"><br>
+        <!-- 暗文输入框 -->
+        密码:<input type="password" name="password"><br>
+        <!-- 点击提交按钮 username=zhangsan password=输入的内容 -->
+        <!-- 单选按钮 将他们设置同一个单选按钮组-->
+        <!-- label标签 可以设置文字选择按钮 -->
+        角色:
+        <!-- 1.使用label字节包裹input标签 -->
+        <label>
+            管理员: <input type="radio" name="role" value="admin" > </label>
+        <!-- 2.给label标签for属性和输入框id属性一致 需要把文字放在label中 -->
+        <label for="customer">顾客:</label>
+        <input type="radio" name="role" value="customer" id="customer"> 员工:
+        <input type="radio" name="role" value="employee" id="">
+        <br> 
+        爱好:
+        足球:<input type="checkbox" name="hobbies" value="football"> 
+        篮球:<input type="checkbox" name="hobbies" value="basketball"> 
+        唱歌:<input type="checkbox" name="hobbies" value="sing" checked>
+        <br> 城市:
+        <select name="city" multiple>
+            <optgroup label="一线城市" disabled>
+            <option value="beijing">北京</option>
+            <option value="shanghai" selected>上海</option>
+            <option value="taiyuan">太原</option>
+            </optgroup>
+            <optgroup label="二线城市">
+            <option value="xian">西安</option>
+            <option value="suzhou" selected>苏州</option>
+            <option value="hangzhou">杭州</option>
+            </optgroup>
+         </select>
+        <!-- 普通按钮 -->
+        <input type="button" value="点击我">
+        <!-- 图片按钮 -->
+        <input type="image" src="../音视频/ad7.jpeg" alt="">
+        <!-- 隐藏域 悄悄地提交一些数据到服务器 -->
+        <input type="hidden" name="token" value="123token">
+        <!-- 重置按钮 清空用户在表单输入的内容 默认选项不会被清空 -->
+        <input type="reset" value="重置">
+        <!-- 提交按钮 -->
+        <input type="submit" value="提交">
+        <!-- 小刷和大刷
+                小刷请求的浏览器缓存
+                大刷请求的是服务器或者重新载入页面
+                -->
+    </form>
+</body>
+
+</html>

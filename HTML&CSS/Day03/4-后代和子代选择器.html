@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 4.后代选择器 选中所有的后代 包括子代和其他后代 使用空格隔开*/
+        div p {
+            color: cyan;
+        }
+
+        /* 5.子代选择器 选中直接子代 不包括其他后代 使用>隔开 */
+        .box>p {
+            color: rgb(147, 51, 236);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>我是一个p标签</p>
+        <p>我是一个p标签</p>
+        <p>我是一个p标签</p>
+        <p>我是一个p标签</p>
+        <div>
+            <p>我是一个p标签</p>
+            <p>我是一个p标签</p>
+            <p>我是一个p标签</p>
+            <p>我是一个p标签</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 1.标签选择器 选中所有名为div标签  */
+        div {
+            color: orange;
+            font-size: 24px;
+        }
+
+        /* 2.id选择器 #id 唯一选中一个标签 */
+        #two {
+            background-color: pink;
+        }
+
+        /* 3.class选择器 类选择器 .类名 选中一类标签 */
+        .three {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        父亲
+        <div>
+            儿子
+            <div>孙子</div>
+        </div>
+    </div>
+    <p id="two">段落标签</p>
+    <p class="three">段落标签</p>
+    <!-- 可以给标签添加多个类名 使用空格隔开 -->
+    <p class="four three">段落标签</p>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        } */
+
+        .cube:first-child {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            background-color: red;
+        }
+
+        .cube:last-child {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            background-color: red;
+            /* 开启bfc属性 */
+            /* display: inline-block; */
+            /* position: absolute; */
+            /* float: left; */
+        }
+        .container{
+            /* 开启BFC属性 */
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cube"></div>
+    </div>
+    <div class="cube"></div>
+</body>
+
+</html>

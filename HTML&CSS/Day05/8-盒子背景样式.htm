@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+         width: 300px;   
+         height: 400px;
+         /* 设置盒子背景颜色 */
+         background-color: red;
+         /* 设置盒子设置背景图片 */
+         background-image: url(./swipe/bg.jpg);
+         /* 设置盒子背景图片平铺方式 background-repeat 默认平铺 repeat*/
+         /* no-repeat 不平铺
+            repeat-x 在x轴方向进行平铺
+            repeat-y 在y轴方向进行平铺
+         */
+         background-repeat: no-repeat;
+         /* 设置背景图片位置 水平位置 垂直位置 */
+         background-position: 10px 10px;
+         /* 背景属性所写 颜色图片 平铺方式 关联方式 图片位置 */
+         background: blue url(./swipe/bg.jpg) no-repeat 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>我是一个DIV</div>
+</body>
+</html>

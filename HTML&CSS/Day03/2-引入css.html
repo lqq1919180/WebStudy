@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 外部样式表 -->
+    <!-- 3.1 使用link标签引入外部样式表 -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <!-- 2.内部样式表 -->
+    <style>
+        /* 3.2 使用@import 引入外部样式表 @import必须放在style标签第一行 */
+        @import url('./style.css');
+        div{
+            color: yellow;
+            /* 设置字体大小 */
+            font-size: 28px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 引入CSS样式
+        1.内联样式 行内样式
+        2.内部样式表 style标签 
+        3.外部样式表    
+            使用link标签引入
+            使用@import引入   
+        优先级:内联样式/行内样式>内部样式表/外部样式表(就近原则 离标签近的优先级高)
+    -->
+    <!-- link和@import区别
+        1.link是html标签 @import是css方式
+        2.link同时加载html和css  @import优先加载css
+        3.link无兼容性差异 @import只支持ie5+以上版本
+        @import不建议使用
+    -->
+    <!-- 1.使用style属性 内联样式 行内样式 -->
+    <div style="background-color: blue;">我是一个div</div>
+</body>
+</html>

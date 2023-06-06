@@ -1,0 +1,51 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "34646441",
+      "name": "语音转文字",
+      "font_class": "wenzizhuanyuyin",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "34646566",
+      "name": "提取伴奏",
+      "font_class": "tiqubanzou",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "34646567",
+      "name": "变音变调",
+      "font_class": "bianyinbiantiao",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "35669678",
+      "name": "广播",
+      "font_class": "guangbo",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "35758059",
+      "name": "视频合成",
+      "font_class": "shipinhecheng",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "35758060",
+      "name": "提取伴奏",
+      "font_class": "tiqubanzou1",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    }
+  ]
+}

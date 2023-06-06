@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 父子级外边距发生合并 */
+        /* 1.如果两个都是正数 取外边距值较大的一个进行合并 */
+        /* 2.如果一个是正数一个是负数 外边距就会进行相加合并 */
+        .parent{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            margin-top: 10px;
+            /* 1.父子级外边距合并给父元素设置padding */
+            /* padding-top: 20px; */
+            /* 2.给父元素直接设置border */
+            border:1px solid red;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    
+</body>
+</html>

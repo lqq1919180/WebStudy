@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 序选择器 伪类选择器 */
+        p:first-child{
+            color: yellow;
+        }
+        p:last-child{
+            color: pink;
+        }
+        p:nth-child(5){
+            color: blue;
+        }
+        /* 选取奇数p标签 */
+        p:nth-child(odd){
+            background-color: red;
+        }
+        /* 选取偶数p标签 */
+        p:nth-child(even){
+            background-color: green;
+        }
+        /* 1 4 7 3n+1 n 是从0开始的*/
+        p:nth-child(3n+1){
+            font-size: 28px;
+        }
+        /* 2 5 8 3n+2 */
+        p:nth-child(3n+2){
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p>段落标签</p>
+    <p>段落标签</p>
+    <p>段落标签</p>
+    <p>段落标签</p>
+    <p>段落标签</p>
+    <p>段落标签</p>
+    <p>段落标签</p>
+    <p>段落标签</p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 合并单元格
+        
+        table {
+            border-collapse: collapse;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- 表格标签 -->
+    <!-- 表格属性
+        border 代表表格边框厚度 width height 表格宽高
+        align 设置水平方向对齐方式  默认值为left center right
+        cellspacing 单元格到单元格的距离
+        cellpadding 单元格文字到单元格边框距离
+        bgcolor 表格背景颜色
+        background 可以给表格设置背景图片
+        valign 设置垂直对齐方式 top middle(默认值) bottom
+    -->
+
+    <table align="center" border="1px" width="400px" height="300px" cellspacing="0">
+        <!-- 一个tr代表一行 一个td代表一列 -->
+        <tr>
+            <!-- 表格表头标签，自带加粗居中效果 -->
+            <th align="right" valign="bottom">姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        <tr valign="top">
+            <td valign="bottom">张三</td>
+            <td valign="middle">15</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>高启强</td>
+            <td>35</td>
+            <td>男</td>
+        </tr>
+    </table>
+    <!-- 细线表格 -->
+    <table bgcolor="black" cellspacing="1">
+        <tr bgcolor="white">
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+        </tr>
+        <tr bgcolor="white">
+            <td>张三</td>
+            <td>15</td>
+            <td>女</td>
+        </tr>
+    </table>
+    <!-- 表格完整结构 -->
+    <table border="1" cellspacing="0" align="center">
+        <!-- 表格标题标签 -->
+        <caption>个人信息表</caption>
+        <!-- 表头 -->
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <!-- 表体 -->
+        <!-- 如果不写tbody 浏览器会自动补全 -->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>其他</td>
+                <td>删除</td>
+            </tr>
+        </tbody>
+        <!-- 表脚 -->
+        <tfoot></tfoot>
+    </table>
+</body>
+
+</html>

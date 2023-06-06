@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /*  1.继承性 设置父元素的样式子元素可以继承 color /text- /line- /font- 
+        注意:h1标签作为子元素不可以继承font-size
+        a标签作为子元素字体颜色下划线无法继承
+        2.层叠性
+            使用多个选择器给一个标签设置样式 发生层叠
+        3.优先级 权重
+            !important 优先级最高
+            style属性 权重 1000
+            id选择器 权重100
+            类选择器 伪类选择器 属性选择器 权重10
+            标签选择器 伪元素选择器 权重1
+            通配符选择器/普通选择器 权重0
+    */
+    /* *{
+        font-size: 10px;
+    } */
+    .parent {
+        color: red;
+        text-align: center;
+        /* 行高 */
+        line-height: 30px;
+        font-size: 28px;
+    }
+
+    /* p{
+            background-color: rgb(243, 15, 15);
+        }
+        #p{
+            background-color: black;
+        } */
+    /* #p{
+            background-color: pink;
+        } */
+    .p2 {
+        background-color: blue;
+    }
+
+    p {
+        background-color: cyan !important;/* 优先级最高 属性谨慎使用*/
+    }
+</style>
+
+<body>
+    <div class="parent">
+        父亲
+        <div>儿子
+            <div>孙子</div>
+        </div>
+        <p id="p" class="p2">段落标签</p>
+        <h1>一级标题</h1>
+        <a href="#">百度一下</a>
+    </div>
+</body>
+
+</html>

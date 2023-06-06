@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.iconfont字体图标库使用 使用单色图标库 -->
+    <!--    1.1使用link标签引入iconfont.css文件 -->
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <!-- 2.多色图标库使用步骤 -->
+    <!-- 2.1引入iconfont.js文件 线上 本地 -->
+    <script src="http://at.alicdn.com/t/c/font_4101124_tyj1envu24n.js">
+    </script>
+    <!-- 3.font-aswsome 图标使用 -->
+    <!-- 3.1使用link标签引入css文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+    ">
+    <style>
+        .iconfont {
+            color: blue;
+            font-size: 36px;
+        }
+
+        /* 加入通用css代码（引入一次就行） */
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .icon {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--    1.2使用iconfont图标 前缀一定是iconfont -->
+    <i class="iconfont icon-wenzizhuanyuyin"></i>
+    <!--    2.2使用多色图标库 -->
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-saomashiyong"></use>
+    </svg>
+    <!--    3.2使用font-awesome图标库 类名前缀fa-->
+    <i class="fa fa-address-book fa-5x" aria-hidden="true" /></i>
+
+</body>
+
+</html>

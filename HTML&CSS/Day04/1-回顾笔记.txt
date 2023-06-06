@@ -1,0 +1,45 @@
+httpl协议
+    (HyperText Transfer Protocol)超文本传输协议
+    客户端和服务器端请求应答通信协议
+    客户端发送给服务器端的数据会被封装成请求报文
+    请求报文:
+        请求行:get url http1.1
+        请求头:content-type:appicationg/json 浏览器内核
+        空行:空格 回车 分割内容
+        请求体:get请求参数携带在url地址栏上 post携带数据在请求体中
+    服务器端响应给客户端数据会被封装成响应报文
+    响应报文:
+        响应行:http1.1  状态码 200 OK (成功)  Internal Serve Error(失败)
+        响应头:content-type:application/json
+        响应体:{status,message:"查询成功",data:[{id,name},{},timestamp:时间戳]}
+2.get参数 大小限制 1kb~8kb 写在地址栏上 
+3.css(Cascading Style Sheets)层叠样式表 修饰html文档
+    1.语法:
+        1.规则集:选择器{} {声明块}一个属性就是一个声明
+        声明块规则:属性名和属性值之间: 隔开 多对属性之间使用;隔开 最后一对属性可以不加;建议加
+        2.注释 /**/
+        3.速记写法 border:width style color;
+        笔试题:三角形：width:0 height:0 border:100px solid transparent;
+        border-to:100px solid red;
+    2.引入css的方式
+        1.行内样式 内联样式 style属性
+        2.内部样式表 style标签
+        3.外部样式表
+            1.使用link标签引入css文件
+            2.使用@import引入 不建议使用
+            优先级:行内样式>内部样式/外部样式(就近原则)
+            link和@import区别:
+                所属范围:link属于html标签 @import属于css
+                加载:link同时加载html 和css @import优先加载css
+                兼容性:link无兼容性 @import支持ie5+
+    3.css选择器
+        1.标签选择器 div{}
+        2.id选择器 #id{}
+        3.class选择器 .类名{}
+        4.后代选择器 div p{}
+        5.子代选择器 div>p{} 表选中直接子元素
+        6.交集选择器 p.p1
+        7.并集选择器(组合选择器) div,#one,.two{}
+        8.序选择器(伪类选择器) div:first-child{} last-child nth-child(n/odd/even/3n+1)
+        9.兄弟选择器 css2兄弟选择器(除去本身) .div1+div{} css3 .div~div{}
+        10.动态伪类选择器 link visited hover active love hate 

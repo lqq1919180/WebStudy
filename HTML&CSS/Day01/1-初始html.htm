@@ -1,0 +1,64 @@
+<!-- html注释 -->
+<!-- 网页声明 标准的h5文档 -->
+<!DOCTYPE html>
+<!-- 根标签，一个网页只有一个根标签 网页的所有部分都写在html标签 -->
+<html lang="en">
+<!-- 不会直接显示在网页 -->
+
+<head>
+    <!-- 元数据 meta 用来设置网页的一些元数据，比如网页的字符集，关键字、简介-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 选项卡标题 -->
+    <title>Document</title>
+</head>
+<!-- 网页主体部分 -->
+
+<body>
+    <!-- html语法:
+    1.注释 ctrl + /
+        解释说明代码 便于代码阅读和维护    
+    2.属性 标签都有四个属性 id class style title
+    id 唯一标识一个元素
+    class 标识一类元素
+    style 给标签设置样式 内联样式 行内样式
+    titile 给所有标签的提示说明
+    img width height alt 只针对图片加载失败给出的提示说明，img特有属性
+    div width height 直接设置后不会生效，
+        需要在style样式中定义，虽然会生效，但是div块还会默认独占一行
+        大小由内容决定
+    -->
+
+    <!-- 单标签 img br 换行 hr 分割线 -->
+    <!-- <img src="" alt="">  
+    <br />
+    <hr /> -->
+    <!-- 双标签 开始标签 内部内容(标签) 结束标签 -->
+    <!-- <div> 内部内容 </div> -->
+    <!-- 注意规范: 建议镜面嵌套 不建议交叉嵌套 -->
+    <!-- 镜面嵌套 -->
+    <!-- <div>
+        <div></div>
+        <p></p>   
+        <span></span>
+    </div>
+    -->
+    <!-- 交叉嵌套  浏览器会自动加上</p> 标签，但会造成代码效率低，浏览器加载缓慢-->
+    <!-- <div>
+        <p>
+    </div>
+    </p> -->
+    <!-- 标签属性 属性名和属性值之间使用= 隔开 多对属性之间使用空格隔开 -->
+    <div id="container box"></div>
+    <div class="box" title=""></div>
+    <div style="background-color: red;">我是块级元素</div>
+    <div title="我是第四个元素">我是块级元素</div>
+    <!-- 字符实体 &nbsp;空格 &lt;小于号 &gt; 大于号 &quot; 双引号 &copy; 版权-->
+    <div>我&nbsp;&nbsp;是<br> &lt;&quot;块级元素&quot;&gt; &copy;
+    </div>
+</body>
+
+
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <!-- h5新增表单属性 
+            min 最大值
+            max 最小值
+            step 步幅
+            pattern 正则匹配
+            autofocus 自动聚焦
+            required 必填项
+            placeholder 提示内容
+            formaciotn 表单提交服务器的地址
+            formenctype 表单提交的数据格式 查询字符串 纯文本 附件
+            formmethod 提交表单的方式 get post
+            formnovalidate 不校验表单 提交按钮
+            list 与datalist进行待选项
+-->
+        <!-- 进度条 -->
+        <progress value="70" max="100"></progress>
+        <!-- 滑块 -->
+        <input type="range" min="0" max="100" step="1" value="20" />
+        <!-- 对邮箱校验 -->
+        <input type="email" placeholder="请输入邮箱">
+        <!-- 对电话校验 配合正则表达式pattern-->
+        <input type="tel" pattern="1[1-9]{10}">
+        <!-- 对url校验 -->
+        <input type="url">
+        <!-- 取色器 -->
+        <input type="color" autofocus>
+        <!-- 日期 -->
+        <input type="date">
+        <!-- 日期时间 -->
+        <input type="datetime-local">
+        <!-- 给输入框绑定待选项 datalist id属性和input list属性要一致 -->
+        <input type="text" list="input">
+        <datalist id="input">
+            <option value="周一"></option>
+            <option value="周二"></option>
+            <option value="周三"></option>
+        </datalist>
+        <!-- 数字校验 -->
+        <input type="number" min="1" max="100">
+        <input type="submit" value="提交">
+        <input formaction="test.php" type="submit" value="提交按钮2">
+    </form>
+</body>
+
+</html>

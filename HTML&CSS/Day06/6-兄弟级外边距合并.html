@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .one{
+            /* margin-bottom: -10px; */
+            margin-bottom: -10px;
+            /* margin-bottom: 30px; */
+            /* 1.只给其中之一标签设置外边距 */
+            /* 外边距合并规则:如果两个都是正数 会取最大的外边距进行设置
+                如果两个都是负数:会根据其中最小一个负数绝对值 高度减去绝对值
+                如果其中一个是负数一个是正数:外边距进行相加
+            */
+        }
+        .two{
+            /* margin-top: -20px; */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 8.兄弟选择器 不会选择自己*/
+        /* css2兄弟选择器 只会选中相邻的第一个兄弟元素 使用+拼接 */
+        .box+div{
+            color: brown;
+            font-size: 24px;
+        }
+        /* css3兄弟选择器 选取所有的兄弟元素 使用~拼接 */
+        .box~div{
+            color: pink;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">我是一个div</div>
+    <div>我是一个div</div>
+    <div>我是一个div</div>
+    <div>我是一个div</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <base target="_self">
+</head>
+
+<body>
+    <!-- a标题 img标签 p段落标签 br hr -->
+    <!-- img src alt -->
+    <!-- 相对路径 
+        ./ 当前目录 ../上一级目录 
+        绝对路径
+        C D
+        img特有属性 src alt width height 
+        特殊元素，既有行内又有块级元素的特点
+        宽高 设置其中之一即可
+    -->
+    <span>行内元素</span><br>
+    <img width="150px" src="../音视频/ad8.jpeg" alt="图片加载失败文字说明">
+    <div>块级元素</div><br>
+    <img src="https://img1.baidu.com/it/u=1960110688,1786190632&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281" alt="">
+    <!-- 标题标签 -->
+    <h1 id="box">一级标题</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <h4>四级标题</h4>
+    <h5>五级标题</h5>
+    <h6>六级标题</h6>
+    <!-- 1.超链接标签 进行页面跳转 本地 外部网址 锚点 
+        指定跳转方式 
+        target _blank打开新页面 _self 在自身页面打开 
+        可以使用base标签指定所有a标签跳转方式，base写在head头部
+        注意如果head里设置了跳转方式，a标签也设置了的话会遵循就近原则生效
+    -->
+    <!-- 打开本地页面 -->
+    <a href="./2-块级元素和行内元素.html">跳转到2页面</a>
+    <a href="https://www.baidu.com">百度一下</a>
+    <!-- 2.打开电子邮件 -->
+    <a href="mailto:1310972346@qq.com">打开邮箱</a>
+    <!-- 3.设置锚点 -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- 跳转顶部 -->
+    <a href="#top">回到顶部</a>
+    <!-- 指定锚点跳转 -->
+    <a href="#box">回到h1标题</a>
+    <hr>
+    <div>hr是分割线</div>
+    <p>段落标签</p>
+</body>
+
+</html>

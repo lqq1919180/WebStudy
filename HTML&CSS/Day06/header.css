@@ -1,0 +1,46 @@
+/* 头部样式表 */
+.header{
+    height: 36px;
+    background-color: #333;
+}
+/* 设置居中容器 */
+.box{
+    width: 1090px;
+    height: 36px;
+    /* 设置容器水平居中 */
+    margin:0 auto;
+}
+/* 设置ul右浮动 */
+.header>.box>.nav>ul{
+    float: right;
+}
+
+/* 给ul父元素清除浮动 */
+.header>.box>.nav::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+/* 让li标签在一行显示 */
+.header>.box>.nav>ul>li{
+    float: left;   
+    margin-right: 10px;
+    /* 设置文字垂直居中 */
+    line-height: 36px;
+}
+/* 给父元素ul清除浮动 */
+.header>.box>.nav>ul>li::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+/* 设置a标签样式 */
+.header>.box>.nav>ul>li>a{
+    text-decoration:none;
+    color:#ccc;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
+.header>.box>.nav>ul>li>a:hover{
+    color: #fff;
+}

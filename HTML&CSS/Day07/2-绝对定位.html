@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .parent{
+            background-color: orange;
+            position:relative;
+        }
+        .div1{
+            background-color: red;
+        }
+        .div2{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            /* 绝对定位 position:absolute */
+            /* 特性:1.脱离文档流 原先位置不保留 飘在文档流上方 
+                    2.无论有没有父元素/祖先元素 相对于浏览器视口区域进行定位
+                    3.如果父元素/祖先设置定位属性，相对于父元素/祖先元素进行定位
+            */
+            position: absolute;
+            top: 40px;
+            left: 50px;
+        }
+        .div3{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="parent">
+        <div class="div2"></div>
+    </div>
+    <div class="div3"></div> 
+</body>
+</html>

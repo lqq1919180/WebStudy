@@ -1,0 +1,76 @@
+1.否定伪类选择器
+    从一类元素中剔除一些元素 p p2
+    p:not(.p2){}
+2.伪元素选择器
+    ::before ::after ::first-line 第一行 ::first-letter第一个字符
+3.属性选择器
+    div[id='one']{}
+    以什么什么开头属性  css2
+    input[name | 'user'] 只能选取以-隔开的属性名
+     css3
+    input[name^='user']
+    以什么结尾
+    input[name$='name']
+    css2必须设置属性全写 name='username'
+    input[name~='username']
+    css3选取特定的字符
+    input[name=*='u']
+4.通配符选择器 普遍选择器 *表示选中所有的标签
+    取消标签的默认样式
+    *{
+        list-style:none;
+        text-decoration:none;
+        marin:0;
+        padding:0;
+    }
+css三大特性:
+    1.继承性 父元素设置样式后代元素继承
+    2.层叠性 
+    3.优先级 
+        !important 优先级最高
+        style属性 权重1000
+        id选择器 权重100
+        类 伪类 属性选择器 权重10
+        标签 伪元素 权重1
+        通配符选择器 + ~ 权重0
+    内联样式>内部样式/外部样式
+文本属性
+    color:1.关键字(red,blue) 2.十六进制(#346) 3.rgb(red,green,blue) 0-255
+            4.rgba(r,g,b,alpha透明度0-1)
+    text-开头属性
+    text-decoration 设置上划线underline 下划线overline 删除线line-through
+    text-align left center right
+    text-transform 设置形变 owercase uppercase full-width captialize
+    text-indet 设置首行缩进 2em
+    text-shadow 设置文本阴影 h-shadow v-shadow blur color
+    font-开头属性
+    font-style:设置是否开启斜体 italic normal
+    font-weight 设置文本加粗 bold 100-900
+    font-size 设置文字大小 28px
+    font-family 设置文字类型 "宋体","楷体","微软雅黑",serif;
+        网络字体库 webfont
+        1.@font-face:"Zoom-A550" 放在style标签第一行
+        2.font-family: ;
+字体图标库
+    iconfont
+        1.单色图标库 link标签引入css文件 class='iconfont xxx'
+        2.多色图标库 使用script标签引入iconfont.js文件 svg>use标签 user href='#icon-lvshu-5'
+    font-awesome
+        1.使用 link标签引入font-awesome.css文件 bootcdn
+        2.class='fa fa-tubiao fg-2x'
+----------------------------------------------------------------------
+隐藏元素方式有哪些？******
+    1.display:none 隐藏元素
+        不占据原先在浏览器中的位置 js事件不会生效 会引起重排/回流
+    2.visibility:hidden
+        占据原先在浏览器中的位置 js事件不会生效 会引起重绘
+    3.opacity:0
+        会占据原先在浏览器中的位置 js事件会生效 不一定 只有一个图层引起重绘
+重排和重绘********
+    当一个dom元素(标签)的改变影响的几何信息(位置),浏览器计算dom元素的几何信息
+将其正确的显示在页面中,这个过程就叫重排,也叫回流。
+    当dom元素外观被改变,但是不影响布局排列,浏览器将其重新绘制的过程就叫重绘
+重绘不一定引起重排,重排会引起重绘
+重排重绘占据浏览器性能(占据cpu)页面卡顿,ui迟缓。
+重排:dom元素 增加 删除
+重绘:隐藏元素 visibility

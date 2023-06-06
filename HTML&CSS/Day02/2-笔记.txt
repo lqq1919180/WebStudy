@@ -1,0 +1,18 @@
+列表标签
+    无序列表 ul li type='disc/circle/square'
+    有序列表 ol li type='1 A a i I'
+    自定义列表 dl dt dd
+表格 展示数据
+    table
+        属性:width height border bgcolor background 
+            cellspacing 单元格和单元格之间的距离 外边距
+            cellpadding 单元格文字到单元格边框距离 内边距
+            align 水平对齐方式
+            合并单元格边框 border-collapse:collapse
+    tr
+        bgcolor   
+        align      left center right 水平对齐方式
+        valign     top middle bottom  垂直对齐方式
+    td  th
+        align
+        valign

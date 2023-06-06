@@ -1,0 +1,142 @@
+CSS3布局方式
+	浮动布局 块级元素放在一行 display:inline-block
+	特性:脱离文档流,原先位置不保留，飘在文档流上方
+	对兄弟元素的影响
+		覆盖兄弟元素 给兄弟元素清除浮动 clear:both
+		开启bfc
+	对父元素的影响
+		父元素失去高度支撑 给父元素清除浮动
+		::after{
+			display:block;
+			content:"",
+			clear:both
+		}
+		2.在浮动元素和非浮动元素之间添加一个空标签 给标签清除浮动
+		3.给父元素开启bfc 
+	字围浮动:
+		浮动元素不会覆盖文字 文字会自己找位置
+2.外边距合并/高度塌陷 *****
+	1.兄弟级外边距合并
+		出现原因:一个兄弟设置下外边距 另一个兄弟设置上外边距 发生高度塌陷
+		解决方案:
+			1.给一个兄弟元素设置外边距 
+			2.给下方兄弟元素开启bfc 
+				display:inline-block position:absolute/fixed  
+			3.给其中一个兄弟元素设置父元素,给父元素开启bfc 
+				overflow:hidden
+		合并规则:两个正数 取最大值合并 
+						两个负数 取最小负数绝对值 高度进行相减
+						一正一负 外边距进行相加 
+	2.父子级外边距合并
+		出现原因:给父子元素设置同一方向的外边距 
+		解决方案:
+			1.给父元素设置padding
+			2.给父元素设置border:1px solid red;
+			3.给父元素开启BFC overflow:hidden/auto 
+		合并规则:
+			1.两个正数 取最大值合并
+			2.一正一负 进行相加合并
+BFC********
+	BFC(Block Formatting Context),直译为块级格式化上下文 
+	概念:BFC把他看成是元素的一种属性,类似于id title style class...,一旦元素拥有了这种属性,
+	就可以成为一块独立的渲染区域,容器内的元素不会影响容器外的元素.
+1.h5新增特性有哪些?
+	1.h5新增语义化标签 header footer nav article aside 
+	2.音视频 video audio 
+	3.h5新增表单控件 progress range date email url 
+	4.canvas H5API
+	5.本地离线存储 localStorage sessionStorage cookie 
+	BFC触发条件:
+		1.html元素
+		2.float不为none
+		3.position为absolute fixed
+		4.display:inline-block
+		5.overflow不为visible
+	BFC作用:
+		1.避免外边距重叠
+		2.清除浮动
+		3.阻止浮动元素覆盖非浮动元素
+		4.两列布局 左侧顶宽 右侧自适应
+		5.三列布局 左右定宽  中间自适应
+---------------------------------------------------------
+gitee position 案例
+简历:gitee(每天都要使用 将当天代码传到远程仓库) 博客(掘金 csdn )
+	gitee 代码版本控制工具  开源资源共享
+	可以远程管理本地代码 
+个人使用:
+	首次使用(第二次不需要)需要全局配置:
+		git config --gloabal user.name  '自己用户名';
+		git config --gloabal user.email  '自己邮箱';
+	将当前本地仓库初始化为一个git仓库
+		git init 初始化git仓库
+		git add . 查看有没有可以提交的文件/有无文件修改/提交文件到暂存区  
+		git status 查看git提交状态(哪些文件修改 可以被提交)
+		git commit -m '[xxx]做了什么事情' 提交暂存区文件到本地仓库
+		首次使用(第二次不需要):
+			git remote add origin 远程仓库地址 将本地仓库和远程仓库进行绑定
+			git remote -v 查看远程仓库是否绑定成功
+		git push origin master 将文件提交到远程仓库
+			第一次提交 弹框 用户名和密码 这里写手机号和gitee密码
+	第二次使用 
+		git add ./* 追踪文件有无修改 
+		git status 查看git提交状态 
+		git commit -m 'xxx做了什么事情' 
+		git push origin master
+	仓库命名:
+		自学	
+			第day01
+团队使用:
+	老师:
+		发一个项目给组长
+	组长 
+		第一次:
+		提交项目到团队远程仓库
+		am-dashbord提交到远程团队仓库 
+		1.把本地团队仓库初始化成.git仓库 git init
+		2.git add . 提交修改文件 
+		3.git status 查看git提交状态
+		4.git commit -m '组长提交了项目架构' 提交项目到暂存区
+		5.git remote add origin 团队远程仓库地址 将本地团队仓库和远程团队仓库进行绑定
+		6.git remote -v  查看仓库有没有绑定成功
+		7.git push origin master 提交项目到远程仓库
+		第二次写了代码要提交:
+			组长更新别人的代码 git pull origin master
+			git add .
+			git status
+			git commit -m 'xxx做了什么事情'
+			git push origin master
+	组员
+	 	拉取项目架构 
+		git clone 团队远程仓库地址 克隆组长上传的项目
+		组员修改自己的文件要上传了
+		******** git pull origin master 更新别人的代码 一起提交 
+		git add . 跟踪修改的文件 
+		git status 查看可提交文件
+		git commit -m '组员a提交了自己的模块'
+		git push origin master 将代码提交远程仓库
+git log 查看git提交日志
+git reflog 查看git所有提交日志
+你是用过那些git命令? 作用分别是什么?
+    git config --gloabal user.name ''; 全局配置用户名
+    git clone 远程仓库地址 克隆远程仓库
+    git init 初始化git仓库
+    git add . 跟踪修改的文件 / 提交文件到暂存区
+    git status 查看git提交状态
+    git commit -m 'xxx做了什么事情' 提交暂存区文件到本地仓库
+    git push origin master 提交文件到远程仓库
+    git remote add origin xxxx.git 将本地仓库和远程仓库进行绑定
+    git remote -v 查看远程仓库是否绑定成功
+    git log 查看git提交日志
+    git reflog 查看git所有提交日志
+----------------------------------------------------------
+
+定位
+    1.静态定位
+        处于标准流
+        position:static
+    2.相对定位
+    3.绝对定位
+    4.固定定位
+    5.粘滞定位
+盒子水平垂直居中方案?
+flex布局
