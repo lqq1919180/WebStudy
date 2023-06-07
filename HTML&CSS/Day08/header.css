@@ -1,0 +1,255 @@
+/* 头部父容器设置高度 */
+.container {
+    height: 176px;
+}
+
+/* 头部样式表  */
+.header {
+    height: 36px;
+    background-color: #333;
+}
+
+/* 设置居中容器 */
+.box {
+    width: 1090px;
+    height: 36px;
+    /* 设置容器水平居中 */
+    margin: 0 auto;
+}
+
+/* 设置ul右浮动 */
+.header>.box>.nav>ul {
+    float: right;
+}
+
+/* 给ul父元素清除浮动 */
+.header>.box>.nav::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/* 让li标签在一行显示 */
+.header>.box>.nav>ul>li {
+    float: left;
+    margin-right: 10px;
+    /* 设置文字垂直居中 */
+    line-height: 36px;
+}
+
+/* 二级菜单的样式 */
+.header>.box>.nav>ul>li:nth-child(4)>ul {
+    width: 100px;
+    background-color: #fff;
+    text-align: center;
+    position: absolute;
+    /* 盒子阴影 */
+    box-shadow: 0 0 5px #ccc;
+    /* 隐藏二级菜单 */
+    display: none;
+    margin-left: -15px;
+}
+
+.header>.box>.nav>ul>li:nth-child(4):hover ul {
+    display: block;
+}
+
+.header>.box>.nav>ul>li:nth-child(4)>ul>li>a {
+    text-decoration: none;
+    color: #999;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* 给父元素ul清除浮动 */
+.header>.box>.nav>ul::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/* 设置a标签样式 */
+.header>.box>.nav>ul>li>a {
+    text-decoration: none;
+    color: #ccc;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
+
+.header>.box>.nav>ul>li>a:hover {
+    color: #fff;
+}
+
+/* 头部 中间部分 左侧logo 中间搜索 右侧购物车 */
+.logo {
+    margin-top: 30px;
+}
+
+/* 左侧logo */
+.logo>.left {
+    width: 212px;
+    height: 60px;
+    /* background-color: blue; */
+    background-image: url(https://yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxtop-s1ec226323c-5e4f7cf5a5.png?imageView&type=webp);
+    background-position: 0 -298px;
+}
+
+/* 头部中间div一行排列 */
+.logo>div {
+    float: left;
+}
+
+/* 清除浮动 */
+.logo::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.logo>.center {
+    margin-left: 150px;
+}
+
+/* 中间搜索 */
+.logo>.center>div {
+    float: left;
+}
+
+/* 中间清除浮动 */
+.logo>.center::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/* 左侧输入框 */
+.logo>.center>.input {
+    width: 442px;
+    height: 38px;
+    border: 1px solid #cc9756;
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px;
+}
+
+.logo>.center>.input>.i {}
+
+/* 设置输入框样式 */
+.logo>.center>.input>input {
+    width: 368px;
+    height: 38px;
+    border: none;
+    margin-left: 35px;
+    /* 取消输入框聚焦得外边框 */
+    outline: none;
+}
+
+/* 右侧搜索按钮 */
+.logo>.center>.search {
+    width: 90px;
+    height: 39.5px;
+    background-color: #cc9756;
+    color: #fff;
+    text-align: center;
+    line-height: 39.5px;
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 19px;
+    cursor: pointer;
+}
+
+.logo>.center>.search:hover {
+    opacity: 0.7;
+}
+
+/* 设置购物车 */
+.logo>.right {
+    width: 132px;
+    height: 38px;
+    margin-left: 50px;
+    /* background-color: cyan; */
+    border: 2px solid #cc9756;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 19px;
+    cursor: pointer;
+}
+
+.logo>.right>i {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-image: url(https://yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxtop-s1ec226323c-5e4f7cf5a5.png?imageView&type=webp);
+    background-position: 0 -147px;
+}
+
+.logo>.right>span:last-child {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: red;
+    line-height: 18px;
+    color: #fff;
+}
+
+.logo>.right:hover {
+    opacity: 0.7;
+}
+
+.link {
+    margin-top: 20px;
+}
+
+/* 给头部下方链接设置样式 */
+.link>ul>li {
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.link>ul>li:nth-child(2)>div {
+    width: 1200px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 5px #ccc;
+    position: absolute;
+    margin-left: -150px;
+    margin-top: 12px;
+    /* 隐藏二级菜单 */
+    display: none;
+}
+
+.link>ul>li:nth-child(2)>div>dl {
+    /* 开启伸缩盒 弹性元素沿着主轴方向排列 默认是水平轴 */
+    display: flex;
+}
+.link>ul>li:nth-child(2):hover div{
+    /* 显示二级菜单 */
+    display: block;
+}
+.link>ul>li:nth-child(2)>div>dl>dd {
+    margin-right: 45px;
+}
+
+.link>ul>li:nth-child(2)>div>dl>dd>a {
+    color: #333;
+    font-family: "微软雅黑";
+    font-weight: bold;
+}
+
+.link>ul>li>a {
+    text-decoration: none;
+    color: #333;
+    font-family: "微软雅黑";
+    font-weight: bold;
+}
+
+.link>ul>li:first-child>a {
+    padding-bottom: 8px;
+    border-bottom: 3px solid #CC9756;
+}
+
+.link>ul>li>a:hover {
+    color: #CC9756;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #CC9756;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 父子元素开启定位流 */
+        /* 1.如果只给父元素设置z-index，不给子元素设置，
+            无论父元素z-index值多大，子元素优先级高 
+           2.如果只给子元素设置z-index，不给父元素设置
+           z-index>=0优先级高于父元素 z-index<0 优先级低于父元素
+           3.两个元素同时设置z-index
+        */
+        .parent{
+            width: 200px;
+            height: 200px;
+            background-color: cyan;
+            position: relative;
+            z-index: 10;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: relative;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

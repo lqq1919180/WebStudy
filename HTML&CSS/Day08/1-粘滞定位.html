@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1200px;
+            /* 水平居中 */
+            height: 0 auto;
+        }
+
+        .container>div {
+            width: 1200px;
+            height: 700px;
+        }
+
+        .container>div:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        .container>div:nth-child(even) {
+            background-color: yellow;
+        }
+
+        .container>.left,
+        .container>.right {
+            width: 150px;
+            height: 500px;
+            background-color: red;
+        }
+
+        .container>.left {
+            /* 粘滞定位 距离上方50px是相对定位 到达50px之后成为固定定位 */
+            position: sticky;
+            top: 50px;
+        }
+
+        .container>.right {
+            float: right;
+            position: sticky;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <aside class="right"></aside>
+        <aside class="left"></aside>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

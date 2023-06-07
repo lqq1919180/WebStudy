@@ -1,0 +1,68 @@
+Gitee
+    个人使用:
+        首次使用:
+        1.全局配置
+            git config --global user.name/user.email
+        2.创建远程仓库 gitee
+        3.先初始化本地git仓库 git init 生成一个.git文件
+        4.git add ./* 跟踪文件有无修改 / 提交文件到暂存区
+        5.git status 查看git提交状态
+        6.git commit -m 'xxx提交了xxx' 提交暂存区文件到本地仓库
+        7.git remote add origin xxx.git 将本地仓库和远程仓库进行绑定
+        8.git push origin master 提交文件到远程仓库
+        后续使用:
+        1.git add .
+        2.git status
+        3.git commit -m 'xxx做了什么事情'
+        4.git push origin master
+    团队使用:
+        组长:
+            第一次任务:
+            am-dashbord项目
+            1.创建一个团队远程仓库  开放开源权限 邀请组员
+            2.在本地上传项目 初始化一个 .git 本地团队仓库 git init
+            3.git add .
+            4.git status
+            5.git commit -m '组长提交了项目架构'
+            6.git remote add origin xxx.git 将本地团队仓库和团队远程仓库进行绑定
+            7.git push origin master 将项目提交远程仓库
+            后续使用:
+                git pull origin master
+                git add .
+                git commit -m ''
+                git push origin master
+        组员:
+            第一次任务:
+            git clone xxx.git 恐龙团队远程仓库地址 下载依赖
+            写好模块 提交模块
+            git pull origin master 更新别人的代码******
+            git add .
+            git status
+            git commit -m '组员提交了xx模块'
+            git push origin master
+            后续使用:
+                git pull origin master
+                git add .
+                git status
+                git commit -m ''
+                git push origin master
+----------------------------------------------------
+定位:
+    1.静态定位 position:static
+    2.相对定位 position:relative
+        特性:不脱离文档流 原先位置保留 相对于自身在浏览器中默认位置进行定位
+    3.绝对定位 position:absolute
+        特性:
+            1.脱离文档流 原先位置不保留 飘在文档流上方
+            2.无论有没有父元素，相对于浏览器视口区域进行定位
+            3.如果父元素/祖先元素设置了定位，相对于父元素/祖先元素进行定位
+    4.固定定位 position:fixed
+        特性:
+            1.脱离文档流 原先位置不保留 飘在文档流上方
+            2.相对于浏览器视口区域进行定位
+    5.粘滞定位
+        position:sticky
+            相对定位加固定定位
+        特性:不脱离文档流 没达到阈值前是相对定位 达到阈值后是固定定位
+    6.z-index 元素得堆叠顺序 z-index默认值是0
+		针对定位流元素而言的
