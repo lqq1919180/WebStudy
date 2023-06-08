@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        width: 400px;
+        height: 300px;
+        background-color: #ccc;
+        margin: 0 auto;
+        /* 开启弹性盒布局 弹性元素沿着主轴方向进行排列 默认主轴就是水平轴 */
+        display: flex;
+        /* 更改主轴排列方向 主轴默认值为 row */
+        /* column 垂直轴 row-reverse 水平轴反转 column-reverse垂直轴反转 */
+        flex-direction: row-reverse;
+        /* row 1 2 3 row-reverse 321 column 1 2 3 column-reverse 321 */
+    }
+
+    .parent>div {
+        width: 60px;
+        height: 50px;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="div1" style="background-color: red;">弹性元素1</div>
+        <div class="div2" style="background-color: green;">弹性元素2</div>
+        <div class="div3" style="background-color: blue;">弹性元素3</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+****水平垂直居中方案:
+    1.给父元素设置border 通过margin挤压
+    2.通过给父容器设置padding挤压 给父容器设置为边框盒子
+    3.子绝父相 给子元素配合属性设置为0 margn auto
+    4.子绝父相 给子元素设置配合属性 top 50% margin-left:-width/2
+        margin-top:-height/2
+    5.给父元素设置display:flex justify-content:center align-items:center
+    6.给父元素设置display:flex 给子元素设置margin:auto
+设置给弹性容器(父元素)的属性:
+    1.display:flex 开启弹性盒
+    2.flex-direction 设置主轴排列方向 水平或者垂直
+        row 默认主轴是水平方向
+        column 设置主轴为垂直方向
+        row-reverse 将水平方向主轴进行反转 将起点和终点进行交换
+        column-reverse 将垂直方向主轴进行反转 将起点和终点进行交换
+    3.flex-wrap 设置弹性元素是否换行显示
+        wrap 换行 nowrap不换行 wrap-reverse 换行反转
+    4.flex-flow:flex-direction flex-wrap 这两个属性的简写
+    5.justify-content 设置主轴弹性元素的对齐方式
+        flex-start flex-end center strecth space-around space-evenly space-between
+    6.align-items 设置交叉轴元素的对齐方式
+        flex-start flex-end center strecth(拉伸平铺占满父元素的高度 但要取消height设置) baseline(基线对齐 文字对齐)
+    7.align-content
+        设置多行弹性元素对齐方式
+            flex-start flex-end center strecth space-around space-evenly space-between
+弹性元素属性:
+    1.order属性 更改弹性元素排列顺序 值越大 越靠后 值越小 越靠前
+        div1{order:3} div2{order:2} .div3{order:1} .div3>.div2>.div1
+    2.flex-grow属性 默认是0 表示父容器剩余空间是否进行放大 默认是不放大
+    3.flex-shrink属性 默认值是1 表示父容器无法容纳所有弹性元素 是否进行等比例压缩 会等比例压缩
+    4.flex-basis属性 默认值是auto 给弹性元素设置宽度 优先级高于width
+    5.flex属性是flex-grow、flex-shrink、flex-basis属性简写
+        flex:0 1 400px; 表示意思就是不进行放大、等比例压缩、宽度设置为400px
+        flex:number;
+            设置给一个弹性元素:表示将父容器剩余宽度设置给弹性元素
+            .parent{
+                width:250px
+            }
+            .div1{
+                width:50px
+                flex:1
+            }
+            .div2{width:50px}
+            .div3{width:50xp}
+            设置给多个弹性元素:表示就是弹性元素之间的倍数关系
+            弹性元素2宽度是弹性元素1宽度2倍
+            .parent{
+                width:250px
+            }
+            .div1{
+                width:50px
+                flex:1
+            }
+            .div2{
+                width:50px
+                flex:2
+                }
+    6.align-self 表示是自身在交叉轴的对齐方式

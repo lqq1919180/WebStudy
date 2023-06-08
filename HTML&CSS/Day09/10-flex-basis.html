@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        width: 400px;
+        height: 300px;
+        background-color: #ccc;
+        margin: 0 auto;
+        /* 开启弹性盒布局 弹性元素沿着主轴方向进行排列 默认主轴就是水平轴 */
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .parent>div {
+        width: 60px;
+        height: 50px;
+        color: white;
+    }
+
+    /* flex-basis 给弹性元素设置宽度 同时设置width和flex-basis flex-basis优先级高于width*/
+    /* .div2 {
+        flex-basis: 100px;
+    } */
+    /* *****flex-grow flex-shrink flex-basis 可以简写为flex属性 */
+    /* .div2{
+        flex: 0 1 200px;
+    } */
+    .div1{
+        flex: 1;
+    }
+    /* .div2{
+        flex: 2;
+    } */
+    /* flex属性只给其中一个弹性元素设置 表示将父容器剩余空间设置给这个弹性元素 */
+    /* flex属性设置给多个弹性元素 就按照设置的数字进行倍数划分 */
+    /* .div1{flex:1} .div2{flex:2} 表示弹性元素2的宽度是弹性元素1宽度的两倍 
+        flex:number
+        flex:flex-grow flex-shrink flex-basis
+    */
+
+</style>
+
+<body>
+    <div class="parent">
+        <div class="div1" style="background-color: red;">弹性元素1</div>
+        <div class="div2" style="background-color: green;">弹性元素2</div>
+        <div class="div3" style="background-color: blue;">弹性元素3</div>
+    </div>
+</body>
+
+</html>

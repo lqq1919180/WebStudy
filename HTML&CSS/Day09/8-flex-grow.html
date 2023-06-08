@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        width: 400px;
+        height: 300px;
+        background-color: #ccc;
+        margin: 0 auto;
+        /* 开启弹性盒布局 弹性元素沿着主轴方向进行排列 默认主轴就是水平轴 */
+        display: flex;
+       flex-direction: row;
+    }
+
+    .parent>div {
+        width: 60px;
+        height: 50px;
+        color: white;
+    }
+    .div1{
+        /* 默认父容器有剩余空间弹性元素是不会放大 不会占满父容器剩余空间 */
+        /* flex-grow 默认值0 弹性元素默认不放大 */
+        flex-grow: 1;
+    }
+    .div2{
+        flex-grow: 2;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="div1" style="background-color: red;">弹性元素1</div>
+        <div class="div2" style="background-color: green;">弹性元素2</div>
+        <div class="div3" style="background-color: blue;">弹性元素3</div>
+    </div>
+</body>
+
+</html>

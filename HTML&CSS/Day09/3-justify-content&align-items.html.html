@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        width: 400px;
+        height: 300px;
+        background-color: #ccc;
+        margin: 0 auto;
+        /* 开启弹性盒布局 弹性元素沿着主轴方向进行排列 默认主轴就是水平轴 */
+        display: flex;
+        flex-direction: row;
+        /* 更改主轴弹性元素对齐方式 默认值 flex-start 主轴起点对齐 左对齐*/
+        /* flex-end 主轴终点对齐 右对齐 */
+        /* center 主轴中间对齐 */
+        /* justify-content: center; */
+        /* 中间两个弹性元素空间是左右弹性元素空间两倍 */
+        /* justify-content: space-around; */
+        /* 空间均匀分配 弹性元素左右两侧空间相等 */
+        /* justify-content: space-evenly; */
+        /* 最左侧最右侧弹性元素紧贴父容器排列 */
+        /* justify-content: space-between; */
+        /* 拉伸平铺对齐  默认占满父容器高度 如果给弹性元素设置height stretch失效*/
+        justify-content: stretch;
+    }
+
+    .parent>div {
+        width: 60px;
+        /* height: 50px; */
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="div1" style="background-color: red;">弹性元素1</div>
+        <div class="div2" style="background-color: green;">弹性元素2</div>
+        <div class="div3" style="background-color: blue;">弹性元素3</div>
+    </div>
+</body>
+
+</html>
