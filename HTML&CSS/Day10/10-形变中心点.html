@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 100px;
+            height: 100px;
+            border: 1px solid royalblue;
+            margin: 30px auto;
+        }
+        ul li{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            /* 形变中心点
+                百分比 50% 50%
+                像素单位 200px 0
+                位置关键字 center top bottom
+            */
+            transform-origin: center bottom;
+        }
+        ul>li:first-child{
+            background-color: yellow;
+            transform: rotate(30deg);
+        }
+        ul>li:nth-child(2){
+            background-color: blue;
+            transform: rotate(45deg);
+        }
+        ul>li:last-child{
+            background-color: red;
+            transform: rotate(60deg);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

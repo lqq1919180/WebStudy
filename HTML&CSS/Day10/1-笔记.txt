@@ -1,0 +1,32 @@
+伸缩盒 / 弹性盒**********
+核心概念:主轴、交叉轴、弹性容器、弹性元素、弹性元素始终沿着主轴方向排列
+多用于列级布局、自适应布局、移动端布局
+主轴:弹性元素始终沿着主轴方向排列、默认是水平轴。可以更改主轴排列方向
+交叉轴:默认是垂直方向交叉轴
+弹性容器:
+    使用display:flex 属性 容器自动成为弹性容器
+容器属性:
+    1.display:flex
+    2.flex-direction 更改主轴的排列方向 row column row-reverse column-reverse
+    3.flex-wrap 设置弹性元素是否换行显示 默认不换行(nowwrap) wrap wrap-reverse
+    4.flex-flow属性 flex-direction 和 flex-wrap 简写 
+    5.justify-content 更改主轴对齐方式 flex-start flex-end center space-around space-evenly space-between strecth
+    6.align-items 更改交叉轴对齐方式 flex-start flex-end center baseline(文字对齐 基线对齐) strecth
+    7.align-content 更改多行弹性元素对齐方式 flex-start flex-end center space-around space-evenly space-between strecth
+弹性元素属性:
+    1.order 更改弹性元素排列顺序 值越大 越靠后 值越小 越靠前
+    2.flex-grow 当父元素剩余空间 是否放大 默认不放大(0)
+        div{flex-grow:1} p{flex-grow:2}
+        将父元素剩余空间分为3份 div占1 p占2
+    3.flex-shrink 当父元素宽度不足以放下所有弹性元素 是否会等比例压缩 默认等比例压缩 默认值1
+        div{flex-shrink:0}
+    4.flex-basis 给弹性元素设置宽度 优先级高于 width 默认是auto
+    5.flex:flex-grow flex-shrink flex-basis 简写
+        div{flex:0 1 300px}
+
+        div{flex:1} 如果只给其中一个弹性元素设置flex:1 表示将父容器剩余空间分为1份
+         .div1{flex:1} .div2{flex:2} 弹性元素2宽度 是 弹性元素1宽度的2倍
+    6.align-self 表示弹性元素在交叉轴自身对齐方式
+        flex-start flex-end center baseline strecth
+
+-----------过渡  动画--------------

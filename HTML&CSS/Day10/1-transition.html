@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 过渡属性 */
+            transition-property: width,background-color;
+            /* 过渡持续时长 */
+            transition-duration: 2s,3s;
+            /* 过渡等待时长 */
+            transition-delay: 0s,0s;
+            /* 过渡速度  匀速 linear ease-in ease-out ease-in-out*/
+            transition-timing-function: linear,ease-in;
+            /* 简写属性 */
+            transition: width 2s linear 2s,background-color 2s ease-out 0s;
+        }
+       div:hover{
+        width: 200px;
+        background-color: pink;
+       }
+       img{
+        /* transition-delay可以省略 */
+        transition: width 2s linear;
+       }
+       img:hover{
+        width: 200px;
+       }
+    </style>
+</head>
+<body>
+    <div></div>
+    <img width="150px" src="../音视频/ad7.jpeg" alt="">
+</body>
+</html>

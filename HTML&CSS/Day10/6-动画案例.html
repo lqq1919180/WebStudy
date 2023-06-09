@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            /* 2.设置动画 */
+            animation: transform 2s linear 0s infinite alternate;
+
+        }
+        /* 1.定义动画关键帧 变形 平移 + 旋转 + 缩放 */
+        @keyframes transform {
+            /* 开始状态 结束状态 过程 */
+            /* 开始状态 */
+            from{
+                /* transform 变形 translate 平移 translateX 想x轴平移 rotate 旋转 */
+                transform: translate(0) rotate(0);
+                background-color: skyblue;
+                border-radius:0px;
+            }
+            /* 结束状态 */
+            to{
+                transform: translateX(200PX) rotate(360deg);
+                background-color: pink;
+                border-radius: 50%;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

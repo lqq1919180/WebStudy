@@ -49,7 +49,17 @@
     display: none;
     margin-left: -15px;
 }
-
+/* 小三角△ */
+.header>.box>.nav>ul>li:nth-child(4)>ul>.arrow{
+    box-sizing: border-box;
+    width: 10px;
+    border: 5px solid transparent;
+    border-bottom: 5px solid white;
+    position: absolute;
+    left: 40px;
+    top: -10px;
+}
+/* 显示二级菜单 */
 .header>.box>.nav>ul>li:nth-child(4):hover ul {
     display: block;
 }

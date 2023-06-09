@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 2.给元素设置动画 */
+            /* 1.设置动画名称 */
+            animation-name:move;
+            /* 2.设置动画持续时长 */
+            animation-duration: 2s;
+            /* 3.设置动画速率 */
+            animation-timing-function: linear;
+            /* 4.设置动画延迟 */
+            animation-delay: 2s;
+            /* 5.设置动画执行次数 n infinite 无数次 默认是1次 */
+            animation-iteration-count: infinite;
+            /* 6.设置动画反向 是否反方向执行 alternate反方向执行 */
+            animation-direction: alternate;
+            /* 7.设置动画执行完毕停留在那一帧 backwards 第一帧 forwards 最后一帧*/
+            animation-fill-mode: backwards;
+            /* 简写形式 */
+            /* animation:动画名称 持续时间 运动曲线 何时开始 播放次数 反向执行 */
+            /* animation:name duration timing_function delay iteration_count direction */
+            animation: move 2s ease-in-out 0s infinite none;
+        }
+        div:hover{
+            /* 动画暂停执行 paused表示暂停 running表示播放 */
+            animation-play-state: paused;
+        }
+        /* 让div动起来 */
+        /* 1.定义动画关键帧 声明 */
+        @keyframes move {
+
+            /* 开始装填 结束状态 过程状态 */
+            0% {
+                margin-left: 0;
+            }
+
+            25% {
+                margin-left: 150px;
+            }
+
+            50% {
+                margin-left: 250px;
+            }
+            100%{
+                margin-left: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

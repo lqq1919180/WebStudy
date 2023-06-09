@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./font_bottom/iconfont.css">
     <link rel="stylesheet" href="./font_1wusgxrm0e7/iconfont.css">
     <link rel="stylesheet" href="./article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         /* 取消标签默认样式 */
         * {
@@ -36,7 +37,8 @@
                         <li>
                             <a href="#">企业采购&nbsp;&nbsp;<i class="iconfont icon-a-xiala2"></i></a>
                             <!-- 二级下拉菜单 -->
-                            <ul>
+                            <ul class="animate__animated animate__backInDown">
+                                <div class="arrow"></div>
                                 <li><a href="#">企业购</a></li>
                                 <li><a href="#">员工福利</a></li>
                                 <li><a href="#">礼品卡</a></li>
@@ -72,12 +74,12 @@
                             <div>
                                 <dl>
                                     <dd><a href="#"> 我的</a>
-                                    <!-- 三级菜单 -->
-                                    <div>1</div>
-                                    <div>2</div>
-                                    <div>3</div>
-                                    <div>4</div>
-                                    <div>6</div>
+                                        <!-- 三级菜单 -->
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>6</div>
                                     </dd>
                                     <dd><a href="#"> 其他</a></dd>
                                     <dd><a href="#"> 其他</a></dd>
@@ -109,8 +111,26 @@
         <div class="image"></div>
     </div>
     <!-- 侧边栏 -->
-    <aside class="right"></aside>
-    <aside class="left"></aside>
+    <aside class="right">
+
+    </aside>
+    <aside class="left">
+        <div class="rank">
+            <ul>
+                <li><a href="#"> 热销榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt=""> 全站<br>热销榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt="">居家<br>生活榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt="">服饰<br>生活榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt="">美食<br>酒水榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt="">数码<br>家电榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt="">个护<br>清洁榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt="">运动<br>旅行榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt="">母婴<br>亲子榜</a></li>
+                <li><a href="#"><img class="sideIcon" src="" alt=""></a></li>
+
+            </ul>
+        </div>
+    </aside>
     <!-- 新品首发 -->
     <div class="product">
         <!-- 新品首发文字 -->

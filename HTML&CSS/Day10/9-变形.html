@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            width: 500px;
+            height: 500px;
+            border: 1px solid royalblue;
+            margin: 30px auto;
+        }
+
+        ul>li {
+            width: 100px;
+            height: 50px;
+            background-color: royalblue;
+            margin-top: 35px;
+        }
+        ul>li:first-child{
+            /* 平移 transform */
+            transform: translateX(200px) translateY(50px);
+            /* 水平平移距离 垂直平移距离 */
+            transform: translate(100px,50px);
+        }
+        ul>li:nth-child(2){
+            /* 旋转 单位deg 度 */
+            transform: rotate(45deg);
+        }
+        ul>li:nth-child(3){
+            /* 缩放 取值 >1放大 <1缩小 */
+            transform: scaleX(2) scaleY(0.5) scaleZ(1.5);
+            transform: scale(1.5,1);
+        }
+        ul>li:last-child{
+            transform: translate(100px,50px) rotate(45deg) scale(1.2); 
+            /* 网易严选 图片 width scale */
+            
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>tranlaste</li>
+        <li>rotate</li>
+        <li>scale</li>
+        <li>综合</li>
+    </ul>
+</body>
+
+</html>

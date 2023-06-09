@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            animation: pound 0.2s linear 0s infinite alternate;
+        
+        }
+        /* 扩张 收缩 */
+        @keyframes pound {
+            form{
+                /* 没有动画效果 */
+                transform: none;
+            }
+            to{
+                /* scale缩放 <1 缩小 >1 放大 */
+                    transform: scale(1,2);
+            }
+        }
+    </style>
+</head>   
+<body>
+    <img width="300px" src="https://bkimg.cdn.bcebos.com/pic/c995d143ad4bd113a2d890a550afa40f4bfb050b" alt="">
+</body>
+</html>

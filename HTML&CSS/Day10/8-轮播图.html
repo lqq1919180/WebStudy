@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        /* 图片容器 */
+        div{
+            width: 1200px;
+            height: 200px;
+            margin: 30px auto;
+            border: 1px solid royalblue;
+            overflow: hidden;
+        }
+        /* 所有图片容器 */
+        ul{
+            width: 3000px;
+            height: 200px;
+            animation: swipe 8s linear infinite;
+        }
+        ul li{
+            float: left;
+            width: 400px;   
+            height: 200px;
+        }
+        ul li img{
+            width: 400px;
+        }
+        /* 悬浮到ul 所有li透明度为0.5 */
+        ul:hover li{
+            opacity: 0.5;
+        }
+        /* 悬浮到某一个li li透明度为1 */
+        ul li:hover{
+            opacity: 1;
+        }
+        /* 1.定义动画关键帧 轮播动画 */
+        @keyframes swipe {
+            form{
+                margin-left: 0;
+            }
+            to{
+                margin-left: -1600px;
+            }
+            
+        }
+    </style>
+<body>
+    <!-- 图片显示容器 -->
+    <div>
+        <!-- 所有图片容器 -->
+        <ul>
+            <li><img src="../images/ad7.jpeg" alt=""> </li>
+            <li><img src="../images/ad8.jpg" alt=""> </li>
+            <li><img src="../images/ad9.jpeg" alt=""> </li>
+            <li><img src="../images/ad10.jpg" alt=""> </li>
+            <li><img src="../images/ad7.jpeg" alt=""> </li>
+            <li><img src="../images/ad8.jpg" alt=""> </li>
+            <li><img src="../images/ad9.jpeg" alt=""> </li>
+        </ul>
+    </div>
+    <div class="animate__animated animate__wobble" style="font-size: 30px;">我是一个DIV</div>
+</body>
+
+</html> 
