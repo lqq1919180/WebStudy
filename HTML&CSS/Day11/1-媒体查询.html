@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.使用link标签进行媒体查询 条件判断 -->
+    <link rel="stylesheet" media="(min-width:1200px)" href="./div.css">
+    <style>
+        @keyframes move {
+            form{
+                margin-left: 0;
+            }
+            to{
+                margin-left: 200px;
+            }
+        }
+        /* @media(max-width:800px){
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+                animation: move 2s linear;
+            }
+        } */
+
+        /* pc端 1200px min-width 设置一套样式  页面内容*/
+        /* ipad 768<ipad<1200px 设置一套样式 页面内容*/
+        /* iPhone<600px 设置一套样式 页面内容 */
+        /* and 表示前后媒体查询条件必须都满足才会生效 */
+        /* @media screen and (min-width:801px) and (max-width:1199px) {
+            div{
+                font-size: 28px;
+                color: yellow;
+            }
+            body{
+                background-color: royalblue;
+            
+        }
+    } */
+        /* 逗号分隔 , 满足前面或者后面任何一个条件就生效 */
+        /* @media screen ,(max-width:1801px) {
+            div{
+                font-size: 28px;
+                color: yellow;
+            }
+            body{
+                background-color: royalblue;
+            
+        }
+    } */
+    /* not是对条件取反操作 */
+    @media not (max-width:800px) {
+        div{
+            font-size: 58px;
+            color: red;
+        }
+    }
+        /* print 打印时候媒体查询生效 only只满足当前条件 媒体查询才会生效 */
+    @media only print{
+        .title{
+            display: none;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div title="">我是一个DIV</div>
+    <title>标题标签</title>
+</body>
+</html>

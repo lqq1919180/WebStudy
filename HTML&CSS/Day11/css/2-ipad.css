@@ -1,0 +1,20 @@
+/* 768<ipad<1200px 一行显示两个div */
+
+
+.parent{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+
+
+
+.child{
+    flex: 0 1 50%;
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+    border: 5px solid rosybrown;
+    box-sizing: border-box;
+}

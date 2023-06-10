@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 天空轮播 晴朗 阴 晴 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .parent{
+            /* vh viewheight 视口区域高度 vw viewWidth 视口区域宽度 */
+            height:100vh;
+            background-color: skyblue;
+            animation: sky 10s linear infinite;
+        }
+        /*  */
+        @keyframes sky {
+            0%{
+                background-color: skyblue;
+            }
+            50%{
+                background-color: #000;
+            }
+            100%{
+                background-color: skyblue;
+            }
+            
+        }
+        .cloud_one{
+            width: 300%;
+            height: 600px;
+            margin: 30px auto;
+            background: url(../images/cloud_one.png) repeat-x;   
+            position: fixed;
+            left: 0;
+            top: 0;
+            animation: cloud 20s linear infinite;
+        }
+        @keyframes cloud {
+            form{
+                left: 0;
+            }
+            to{
+                left:-200%;
+            }
+            
+        }
+        .cloud_two{
+            width: 300%;
+            height: 600px;
+            margin: 30px auto;
+            background: url(../images/cloud_two.png) repeat-x;   
+            position: fixed;
+            left: 0;
+            top: 0;
+            animation: cloud 40s linear infinite;
+        }
+        .cloud_three{
+            width: 300%;
+            height: 600px;
+            margin: 30px auto;
+            background: url(../images/cloud_three.png) repeat-x;   
+            position: fixed;
+            left: 0;
+            top: 0;
+            animation: cloud 60s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="cloud_one"></div>
+        <div class="cloud_two"></div>
+        <div class="cloud_three"></div>
+    </div>
+</body>
+</html>

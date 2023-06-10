@@ -1,0 +1,10 @@
+/* width > 1200px 一行放四个div */
+.parent{
+    display: flex;
+}
+.child{
+    width: 300px;
+    height: 300px;
+    border: 1px solid rosybrown;
+    margin-left: 10px;
+}

@@ -1,0 +1,36 @@
+1.过渡
+    transition
+    三要素:1.告诉系统过渡的属性2.告诉系统过渡的速度3.过渡持续时间
+    触发条件:1.hover 2.active3.点击
+    transition-property 过渡属性名称
+    transition-duration 过渡持续时长
+    transition-timing-function 过渡曲线速率 ease linear ease-in ease-out ease-in-out 
+    transition-delay 过渡等待时长
+    简写:transition:property duration timing-function delay;
+2.动画
+    animation
+    三要素:1.告诉系统执行哪一个动画 2.告诉系统执行速度 3.动画持续时间
+    触发条件:不需要人为触发
+    animation-name 动画名称
+    animation-duration 动画持续时长
+    animation-timing-function 动画执行速度 ease linear ease-in ease-out ease-in-out 
+    animation-delay 动画等待时长
+    animation-itreation-count 动画迭代次数 n infinite 无数次
+    animation-firection 动画是否反向执行 alternate
+    animation-fill-mode 动画结束停留在第几帧 forwards 最后一帧 backwards第一帧 both
+    简写形式
+    animation:name duration timing-function delay iteration-count direction fill-mode
+3.变形 transform
+    transform:translate(水平，垂直)平移
+    transform:rotate(45deg) 旋转 单位deg
+    transform:scale(1.5,0.5) 缩放 <1 缩小 >放大
+4.形变中心点
+    transform-origin
+        50% 50%
+        200px 200px
+        center bottom top
+媒体查询
+    自适应页面 随着设备分辨率变化而适应页面的过程
+    可以根据不同设备显示器 在不改变页面的内容情况下，为其定制不同的css样式，自适应页面
+    媒体查询:自适应布局 不同的设备
+    伸缩盒:仅仅是宽高的变化
