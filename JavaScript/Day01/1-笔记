@@ -1,0 +1,96 @@
+媒体查询和伸缩盒
+    可以实现响应式页面，可以做自适应页面
+使用方式:
+    1.使用link引入外部css样式 设置媒体查询条件
+        link media='(max-width:1200) and (min-width:800px)'
+    2.在style标签内部使用媒体查询
+    @media screen (max-width){
+        
+    }
+    媒体类型 all screen print
+    媒体特性 width heighy device-width
+    媒体查询条件 连接符
+    and 并且
+    ,   或者
+    not 取反
+    only 仅仅
+-----------------------------------
+JS:
+    1.js是一门函数优先(函数当成变量、参数、返回值使用)，具有原型编程(不适用class创建object)的一门需要解释器解析执行的编程语言。
+JS组成:
+    ES 5 2015年之前版本
+    1.ECMScript 核心js  基础语法和内置对象函数
+        变量 注释 函数 对象 数组 原型 原型链 设计模式 继承
+        lodash库 
+    2.DOM(Document Object Model 文档对象模型)
+        对网页进行操作 绑定事件
+        各大浏览器厂商都会封装开发的第三方库 主流浏览器都支持
+        var dom = document.getElementById();
+        dom.onclick = function() {}
+        jQuert库 封装了DOM
+    3.BOM(Browser Object Model 浏览器对象模型)
+        对浏览器进行操作的
+        调用浏览器自身的api 对浏览器接口的api进行操作
+        浏览器弹框alert()
+        ajax 发送请求
+JS运行环境:
+    1.可以运行在浏览器
+    2.可以运行在Nodejs平台
+JS特点:
+    1.解释性语言
+        需要解析器解析执行
+    2.弱类型语言
+        变量可以重复声明 动态切换数据类型
+        var a = 10;
+        var a = 'hello';
+        强类型语言
+            变量声明的时候就确定数据类型 不可以重复声明
+            java
+            int a = 10;
+    3.从上到下按照解析顺序执行代码
+    4.区分大小写，大小写敏感(html css 不区分大小写 大小写不敏感)
+JS注释
+    //单行注释
+    /**
+    *   ...
+    *   多行注释
+    */
+JS写在head body标签里面的区别?
+    写在head获取标签的时候需要放在window.onload = function() {
+
+    }
+    因为html解析顺序从上到下执行
+    body标签写在标签下方 等待标签解析完毕再去获取
+JS变量
+    声明变量的方式 var let const
+    标识符/变量名命名规则:
+        1.有字母数字下划线$组成
+        2.不能以数字开头
+        3.不能使用关键字和保留字
+        4.建议使用驼峰式命名
+    使用var声明变量特点:
+        1.可以变量提升
+        2.可以重复声明
+        3.不存在暂时性死区
+        4.不存在块级作用域
+局部变量、全局变量
+    1.写在函数内部使用var 声明该变量 function 声明该变量 具有局部作用域
+    2.不适用var 声明变量就是全局变量 具有全局作用域
+
+数据类型
+    基本数据类型/简单数据类型:
+        1.number
+            十六进制、十进制、科学计数法、小数、分数
+        2.string(字符串类型)
+            "" '' 包裹的就是string
+        3.boolean(布尔类型 true false)
+        4.null 空引用类型
+        5.undefiend 未定义类型 声明变量不初始化 var a;
+        6.Symbol类型 表示的是独一无二的值
+        7.BigInt类型 处理超出js计数范围的类型 当前数字超出最大的数字范围 就会失去精度
+    引用数据类型/复杂引用类型:
+        Object对象
+        function
+        array
+    检测数据类型 使用typeof
+    结果: number string undefiend boolean null symbol bigint function

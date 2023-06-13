@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./1-初识js.js"></script>
+    <script>
+        // 延迟代码加载顺序 等待body标签解析完毕最后执行
+        window.onload = function () {
+            var div = document.querySelector('div');
+            console.log(div, '头部获取div')
+        }
+
+    </script>
+    <style>
+        DIV {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <DIV>我是一个div</DIV>
+    <script>
+        // alert('hello js')
+        var div = document.querySelector('div');
+        console.log(div, '标签下面获取div')
+    </script>
+</body>
+
+</html>
