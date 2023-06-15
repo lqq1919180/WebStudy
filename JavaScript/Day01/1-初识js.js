@@ -1,4 +1,4 @@
-// 不支持dom bom
+// node.js 不支持dom bom
 // console.log('hello js');
 // 声明变量使用 es5:var es6:let const
 // var a = 10;

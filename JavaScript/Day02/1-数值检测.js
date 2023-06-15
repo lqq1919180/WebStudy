@@ -1,6 +1,6 @@
 // 正无穷 负无穷
 console.log(9 / 0); //Infinity
-console.log(-9 / 0);  //Infinity
+console.log(-9 / 0);  //-Infinity
 console.log(5 / 'hello'); //NaN 表示不是一个数字 not a number
 var a = 'hello';
 // isNaN 用来检测是否是一个数字 是数字返回false 不是数字返回true

@@ -1,6 +1,6 @@
 // 同真才为真 有假且为假
-// 如果两个操作数有一个是假的 返回第一个操作数 null "" NaN false undefined 假的操作数
-//如果两个操作数第一个是真的 返回第二个
+// 如果两个操作数第一个是假的 返回第一个操作数 null "" NaN false undefined 假的操作数
+//如果两个操作数第一个是真的 返回第二个操作数
 console.log(null && 'hello');
 console.log("" && 'hello');
 console.log(false && 'hello');
@@ -24,7 +24,7 @@ if (a < 10 || b > 3) {
 
 /**
  * 或者操作数 如果第一个操作数是假的 返回第二个操作数
- * 如果第一个操作数是真的 返回第一个操作数
+ * 如果第一个操作数是真的 直接返回第一个操作数
  * 有真则为真 同假才为假
  */
 console.log(null || 'hello');

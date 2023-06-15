@@ -63,10 +63,10 @@
 
 // 数组可以是任意数据类型
 // arr[index] 访问数组元素 index下标 索引
-var arr1 = [true,null,undefined,{name:'zhangsan'},10,function(){},Symbol('name')];
+// var arr1 = [true,null,undefined,{name:'zhangsan'},10,function(){},Symbol('name')];
 
-console.log(arr1);
-console.log(arr1[4]);
-// 删除数组元素
-delete arr1[5];
-console.log(arr1);
+// console.log(arr1);
+// console.log(arr1[4]);
+// // 删除数组元素
+// delete arr1[5];
+// console.log(arr1);
