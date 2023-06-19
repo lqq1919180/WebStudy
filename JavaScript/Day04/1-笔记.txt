@@ -1,0 +1,76 @@
+1.三目运算符 表达式?:语句1:语句2
+    a>=18>:'成年人':'未成年'
+2.类型转换
+    1.将其他类型转为string类型
+        1.字符串拼接 + " "
+        2.toSting() null/undefined无法调用toString函数 没有包装器函数
+            number.toSting(n进制)
+        3.String()包装函数
+    2.将其他数据类型转换为boolean
+        1.Boolean()包装器函数
+        2.!!a
+    3.将其他数据类型转为number类型
+        1.+
+        2.Number() 包装器函数
+        3.parseInt() 取整数 除了数字字符串可以转为数字 其他数据类型都是NaN
+        4.parseFloat() 保留小数点
+        console.log(![] == []); //true
+3.if(表达式){
+
+}else if(表达式2){
+
+}else{
+    
+}
+
+switch(表达式常量){
+    case x:
+        执行代码块;
+        break;
+    case y:
+        执行代码块;
+        break;
+    case z:
+        执行代码块;
+        break;
+    case a:
+        执行代码块;
+        break;
+    default:
+        执行代码块;
+        break;
+}
+
+for(起始条件;结束条件;迭代条件){
+
+}
+
+while(表达式){
+    执行循环体;
+    迭代条件
+}
+
+do{
+    // 循环体至少会执行一次
+    执行循环体;
+    迭代条件;
+}while(表达式)
+4.增强版for循环 for in 循环 遍历对象对象和数组
+for(let key in obj){
+    key ---属性名
+    obj[key] ---属性值
+}
+for(let key in arr){
+    key ---索引
+    arr[key]---索引对应的数组元素
+}
+5.递归
+    自身调用自身函数
+    给一个跳出条件 找到变量
+    function fc(n){
+        if(n==1){
+            return 1;
+        }
+        return fc(n-1)*n;
+    }
+    fc(6)
