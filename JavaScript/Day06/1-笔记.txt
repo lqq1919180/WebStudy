@@ -1,0 +1,73 @@
+1.静态方法 定义属性 
+	定义一个属性 可删除 可枚举 可修改 
+		Object.defineProperty(obj,'name',{
+			//数据属性 
+			configurable:true /false ,
+			writable:true /false ,
+			value:'',
+			enumerable:true / false  不可使用for in遍历
+		})
+		Object.defineProperties(obj,{
+			name:{
+				//数据属性 
+				configurable:true /false ,
+				writable:true /false ,
+				value:'',
+				enumerable:true / false  for in  
+			},
+			age:{},
+			gender:{}
+		})
+	获取属性特性:
+		Object.getOwnPropertyDescriptor(obj,'name');
+		Object.getOwnPropertyDescriptor(obj,'age');
+		读取多个属性特性
+		Object.getOwnPropertyDescriptors(obj);
+访问器属性 控制私有属性的修改和读取 
+	var obj = {
+		_year:2023
+	};
+	Object.defineProperty(obj,'year',{
+		//读取year时候触发 
+		get:function(){
+			return this._year
+		}
+		//不提供set函数 不可以直接修改year属性和 _year
+		set:function(newYear){
+			if(this._year!=newYear){
+				this._year = newYear
+			}
+		}
+	});
+	obj.year = 2024;
+对象序列化和反序列化  可以实现深拷贝 
+	1.序列化 将对象转为json字符串 
+		JSON.stringify(obj) {"name":"zhangsan","age":12} string
+	2.反序列化 将json字符串转为对象 
+			JSON.parse(jsonStr) {name:"zhangsan",age:12}
+--------------------------------------------------------------
+数组 
+	是一种有序的可以存放任意数据类型的集合.
+1.创建数组:
+	1.使用字面量 var arr = [1,2,3,4,任意数据类型];
+	2.使用构造函数
+	 var arr = new Array();
+	 参数:number整数 表示数组长度 数组元素空元素
+	 			number小数 报错 
+				放其他数据数据类型会被当成数组元素 
+2.访问数组 
+	arr[index] index表示下标 索引 从0开始 0-11月 
+	arr[arr.length-1] 最后元素
+3.特点:
+	1.可以存放任意数据类型
+	2.长度是可以动态修改的
+		arr[length+n] = 新增一些元素
+		arr[length-n] = 从末尾删除一些元素
+4.数组API 
+	pop 从末尾删除数组元素 
+	参数:无 		返回值:删除的数组元素   修改原数组 
+	push 从末尾增加数组元素 
+	参数:增加的数组元素 返回值:新数组的长度 修改原数组 
+1.数组元素两数之和相加等于指定值 nums=[2,5,7,11] target=9; 返回下标 return [0,2]
+2.重构pop方法
+3.重构push

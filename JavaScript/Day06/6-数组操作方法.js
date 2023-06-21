@@ -53,6 +53,6 @@ var arr = [1, 2, 3, 4, 5];
 // console.log(res, arr);
 
 // var res = arr.splice(-2); //表示从倒数第2项开始删除，到末尾结束
-// var res = arr.splice(-2, -1); //表示从倒数第2项开始删除1项
+// var res = arr.splice(-2, 1); //表示从倒数第2项开始删除1项
 var res = arr.splice(-2, -1,'tom'); //-1<0 不删除元素 并且添加1项新的元素到数组
 console.log(res, arr);

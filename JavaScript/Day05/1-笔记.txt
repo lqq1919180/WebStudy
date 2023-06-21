@@ -1,0 +1,60 @@
+对象:
+	无序属性和方法的集合。
+1.单个对象创建
+	1.使用直接字面量 
+	var obj = {
+		name:'zhangsan',
+		age:12
+	}
+	2.使用构造函数创建对象 
+	var obj = new Object();
+	obj.name = 'terry';
+2.对象访问 
+	1.点访问法 obj.name 
+	2.中括号访问法 obj['age'] 可以解析变量
+3.对象遍历/删除/新增/修改
+	for(let key in obj){
+		console.log(key,'属性名');
+		console.log(obj[key],'属性值')
+	}
+	删除属性 delete obj['name']/obj.name
+	新增属性 如果对象没有这个属性 obj.gender = 'male'
+	var obj = {name:'lisi'}
+	修改 obj.name = 'zhangsan'
+4.类型转换 将对象转换为其他类型(Boolean String Number)
+	1.将对象转为Boolean类型 
+	Boolean(obj);//true 
+	2.将对象转为String类型
+		1.String(obj);
+		2.{}+""
+		3.{}.toString()
+		默认都调动toString() [object,Object]
+		如果重写了toString() 则调用重写toString()
+	3.将对象转为number类型
+		1.Number({})
+		2.+{}
+		3.parseInt()
+		4.parseFloat()
+		1.如果重写了toString() 则都会调用toString()
+		2.如果重写了valueOf() Number和+ 会调用valueOf
+		3.如果两者都重写 Number和+会调用valueOf parseInt parseFloat调用toString()
+5.检测属性 
+	1.检测属性是自有属性或者继承属性 
+		console.log('name' in obj);//true
+		console.log('toString' in obj);//true
+	2.检测属性是自有属性而非继承属性 hasOwnProperty
+		console.log(obj.hasOwnProperty('toString'));//false
+		console.log(obj.hasOwnProperty('name'));//true
+	3.检测属性是可枚举属性既自己创建的一个属性 propertyIsEnumerable
+		console.log(obj.propertyIsEnumerable('age'));//true
+		console.log(obj.propertyIsEnumerable('toString'));//true
+6.原型
+	每一个构造函数(Object)都有一个指针(prototype)指向原型对象(Object.prototype)
+	原型对象都一个指针(constructor)指向构造函数(Object)
+	每一个实例对象都有一个指针(__proto__)指向原型对象(Object.prototype)
+	静态属性/静态方法:只能由构造函数本身去调用的属性和方法
+	原型属性/原型方法：存在于原型对象中的属性和方法
+	实例属性/实例方法：可以去访问原型属性和原型方法
+
+		
+
