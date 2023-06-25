@@ -2,12 +2,12 @@
 // console.log(1 + '2'); //12
 // // - / * % 两个字符串有一个是其他数据类型 就是隐式转换number 进行运算
 // console.log(1  - '2'); //1-2
-// console.log(1 -true); //1-1
-// console.log(1 -null); //1-0
-// console.log(1 -undefined); //1-NaN
-// console.log(1 -{}); //1-NaN
-// console.log(1 -[]); //1-0
-// console.log(1 -function(){}); //1-NaN
+// console.log(1 - true); //1-1
+// console.log(1 - null); //1-0
+// console.log(1 - undefined); //1-NaN
+// console.log(1 - {}); //1-NaN
+// console.log(1 - []); //1-0
+// console.log(1 - function(){}); //1-NaN
 
 // // 将其他数据类型转为number类型
 // console.log(+[],+null,+true,+false,+"",+'hello');
@@ -53,4 +53,5 @@ var obj = {
     }
 }
 var b = 10;
+console.log(obj);
 console.log(obj + 10); // [object,Object]10  调用toString 手动改成valueOf() 还会调用toString()

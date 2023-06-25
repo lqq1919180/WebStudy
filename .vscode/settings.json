@@ -17,5 +17,10 @@
             }
         },
     },
-    "editor.trimAutoWhitespace": true
+    "editor.trimAutoWhitespace": true,
+    "cSpell.words": [
+        "concat",
+        "rerrylarryf",
+        "worldthree"
+    ]
 }

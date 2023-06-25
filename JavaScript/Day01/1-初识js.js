@@ -14,7 +14,7 @@ console.log(a); //hello js
  * 解析顺序 var a;
  * console.log(a); //undefined
  * a = 'hello js'
- * cnsole.log(a); //'hello js'
+ * console.log(a); //'hello js'
  */
 var B = 'hello';
 console.log(b);

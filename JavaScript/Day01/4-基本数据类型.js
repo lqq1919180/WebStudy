@@ -49,4 +49,4 @@
 // var a = BigInt(9007255619989992n);
 // console.log(a, typeof a);
 
-//typeof 检测结果 number string boolean undefiend object symbol bigint
+//typeof 检测结果 number string boolean undefined object symbol bigint

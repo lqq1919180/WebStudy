@@ -26,7 +26,7 @@
 
 /**
  * some方法 对比数组每一项元素是否符合函数内部条件表达式 一项符合就为true
- * 参数:            返回值:true / false     修不修改原数组:
+ * 参数:函数            返回值:true / false     修不修改原数组:不修改
  */
 var ages = [18, 32, 56, 44, 22];
 var res = ages.some(function (item) {

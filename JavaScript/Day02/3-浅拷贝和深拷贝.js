@@ -2,7 +2,7 @@
 var a = 10;
 var b = a;
 console.log(a, b); // 10 10 
-a = 20;
+b = 20;
 console.log(a, b); // 20 10
 // 浅拷贝 拷贝的是引用地址
 var obj = {

@@ -92,8 +92,8 @@
 //     return false;
 // };
 
-// const arr = [1, 2, 3, 4, 5];
-// const res = arr.mySome(function (item) {
+// var arr = [1, 2, 3, 4, 5];
+// var res = arr.mySome(function (item) {
 //     console.log('some');
 //     return item > 5;
 // });
