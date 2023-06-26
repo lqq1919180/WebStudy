@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <script>
+        console.log(this, 'this指向全局对象window对象');
+        /**
+         * 点击按钮获取到this
+         * */
+        // 1.获取按钮
+        var btn = document.getElementById('btn');
+        console.log(btn);
+        // 2.给按钮绑定事件 on事件类型 查看this指向
+        btn.onclick = function () {
+            console.log(this);
+        }
+    </script>
+</body>
+
+</html>
