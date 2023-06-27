@@ -1,0 +1,131 @@
+var o = {
+	a: 10,
+	b: {
+			a: 12,
+			fn: function(){
+					console.log(this.a);
+					console.log(this);
+			}
+	}
+	}
+o.b.fn(); 
+
+	var o = {
+			a: 10,
+			b:  {
+					fn: function(){
+							console.log(this.a);
+							console.log(this);
+					}
+			}
+	}
+	o.b.fn(); 
+
+	var point = { 
+		x : 0, 
+		y : 0, 
+		moveTo : function(x, y) { 
+				var moveX = function(x) {
+					
+					 this.x = x;
+				}; 
+				// 内部函数
+				var moveY = function(y) { 
+					 this.y = y;
+				} 
+				moveX(x); 
+				moveY(y); 
+		} 
+}; 
+point.moveTo(1, 1); 
+console.log(point.x);
+console.log(point.y);
+console.log(x);
+console.log(y);
+函数
+	
+1.函数创建 
+	1.使用function关键字 
+	function foo(形式参数){
+
+	}foo(实际参数)
+	2.函数表达式
+	var foo = function(){
+		return 10;
+	}
+	foo()
+2.函数提升 
+	函数提升到作用域最前方 var声明变量提升到作用域前方
+	foo()
+	function foo(){}
+3.函数内部属性
+	类数组转为数组对象 
+		1.Array.from()
+		2.[...arguments]
+	1.auguments 用来保存实际参数列表得类数组对象 
+		length index  arguments[index]
+		内部属性 callee auguments.callee 指向函数本身
+	auguments.callee 可以用来实现递归 
+	2.this 
+		函数赖以执行得环境对象  
+		1.如果单独使用 node this指向当前模块 {} 浏览器中 window
+		2.如果在函数内部使用this this指向全局对象 foo()
+		3.如果在方法中使用this this指向拥有该方法得调用者 
+		4.如果在事件中使用this,this指向接收该事件的元素
+4.IIFE 立即执行函数
+	函数声明得也同时就立即执行 
+	(匿名函数)(实际参数)
+	var res = 	(()());
+	特点:1.页面加载得时候,立即执行函数只执行一次
+	2.拥有局部作用域 变量不会泄露 
+	for(var i=0;i<6;i++){
+		function output(){
+			console.log(i)
+		}
+	}
+	output()
+	for(){
+		(function(j){
+			console.log(j)
+		})(i)
+	}
+5.作用域
+		函数内部作用域:函数内部得变量函数外部无法访问 
+		全局作用域:函数内部可以访问函数外部得变量 
+		var a = 1;
+		function foo(){
+			var a;
+			console.log(a,'undefined');
+			a = 2;
+			console.log(a,'2');
+			var a = 3;
+			console.log(a,'3');
+		}
+		console.log(a,'1');
+		foo()
+		console.log(a,'1')
+6.作用域链
+	自由变量沿着父作用域一层一层向上查找调用值得过程  报错
+	自由变量:当前作用域本身没有这个变量 想要获取值
+	var a = 10;
+	function foo(){
+		var b = 20;
+		function fn(){
+			var c = 30;
+			console.log(a);
+			console.log(b);
+			console.log(c);
+		}
+		fn()
+	}
+	foo()
+7.修改this指向问题
+	call(执行环境对象,实际参数列表)
+	apply(执行环境对象,[实际参数列表])
+	bind(执行环境对象,实际参数列表)(实际参数列表)
+8.函数调用
+	1.函数名(实际参数)
+	2.call(执行环境对象,实际参数列表)
+	3.apply(执行环境对象,[实际参数列表])
+	4.bind(执行环境对象,实际参数列表)(实际参数列表)
+	
