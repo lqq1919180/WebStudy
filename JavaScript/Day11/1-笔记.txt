@@ -1,0 +1,93 @@
+1.函数的应用
+	1.函数可以作为参数  回调函数 
+	function A(callback){
+		callback(1,2)
+	}
+	function B(a,b){
+		return a + b
+	}
+	A(B)
+	A(function(){
+
+	})
+	2.函数还可以作为返回值
+	function A(a,b){
+		var a = 10;
+		return function(){
+			a--;
+			console.log(a)
+		}
+		function fn(){}
+		return fn
+	}
+	A()()
+2.闭包 
+		函数内部作用域可以访问函数外部作用域的变量和方法
+		1.产生条件:
+			1.嵌套函数
+			2.存在对外部函数变量得引用
+			3.返回函数
+			4.变量不会被回收机制回收 会缓存变量
+		优点:不会污染全局变量 变量不会被回收机制回收 会缓存变量
+		缺点:变量不会被销毁 造成内存泄漏 造成性能问题
+	function A(){
+		var a = 10;
+		return function(){
+			a--;
+			console.log(a)
+		}
+	}
+	A()
+	A()
+正则表达式 
+	匹配字符模式的对象 
+1.创建正则表达式 
+	1.直接字面量 var reg = /正则表达式/修饰符(igm)
+	2.构造函数 var reg = new RegExp('正则表达式','修饰符')
+2.正则表达式实例方法 
+	1.exec()  匹配字符串得字符  匹配失败返回null
+	reg.exec(校验得字符串) ['匹配到的内容',index:0,input:'字符串',groups:undefined]
+	2.test() 匹配字符串的字符 返回值 true(匹配成功) false(匹配失败)
+	reg.test(校验得字符串)
+	3.toString()  将正则表达式转为字符串 string
+	4.toLocaleString() 将正则表达式转为本地字符串 string
+	5.valueOf() 将正则本身返回 object
+
+3.lastIndex	实例属性
+	记录每一次匹配到内容得索引位置 从内容得下一个索引开始进行记录
+	如果没有开启全局匹配 每一lastIndex是0 每次正则匹配得起点 
+	reg.lastIndex; lastIndex  0
+	reg.exec();'hello' 
+	reg.lastIndex; lastIndex 5 
+	reg.exec(); null 
+	reg.lastIndex; lastIndex  0 继续从头开始匹配 循环播放 
+	reg.ignoreCase 忽略大小写 true
+	reg.global 全局匹配 true
+	reg.mutiline 多行匹配  true
+	reg.source 将正则本身返回 
+4.直接量字符 
+	\n \r \t \o 
+5.字符集合 
+	[abc]  匹配括号中任意一个字母 
+	console.log(reg.exec('hello'))
+	[0-9] 匹配括号中任意一个数字 
+	[^xyz] 字符中包含xyz就返回false  匹配除xyz之外得任何字符
+6.边界符 
+	^ 以什么开头 
+	$ 以什么结尾 
+	var reg = /^abc/
+	reg.test('abc');true
+	reg.test('aabc');false
+	reg.test('abcd');true
+
+	var reg = /abc$/
+	reg.test('abc');true
+	reg.test('aabc');true
+	reg.test('abcd');false
+
+	精准匹配 
+	var reg = /^abc$/
+	reg.test('abc');true
+	reg.test('abcabc');false
+7.
+

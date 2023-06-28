@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <script>
-      var name = "window";
-			console.log(this)
-      var obj = {
-        name: "obj",
-        say: function () {
-					console.log(this.name)
-          return function () {
-            console.log(this.name);
-          };
-        },
-      };
-      var x = obj.say();
-      x();
+        /**
+         * 在JavaScript中，函数的this值是在函数被调用时确定的，
+         * 它取决于调用函数的方式。
+        */
+        var name = "window";
+        console.log(this); //window
+        var obj = {
+            name: "obj",
+            say: function () {
+                console.log(this.name);
+                return function () {
+                    console.log(this.name);
+                };
+            },
+        };
+        /**
+         * 在调用obj.say()时，say方法内部的this指向了obj对象，
+         * 因此第一个console.log输出的是"obj"。
+         */
+        var x = obj.say();
+        /**
+         * 而当x()被调用时，它在全局作用域下被调用，
+         * 因此this指向全局对象（即window对象）。
+         */
+        x();
     </script>
-  </body>
+</body>
+
 </html>
