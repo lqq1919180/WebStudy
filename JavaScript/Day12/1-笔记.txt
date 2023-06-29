@@ -1,0 +1,59 @@
+正则表达式
+    1.选择 分组 引用
+    var reg = /html|css|js;
+    var str = 'helloworldcsshtml';
+
+    2.分组() 捕获匹配的字符串  引用
+    var reg = /(\d{4})-(\d{2})-(\d{2})/;
+    reg.exec('2023-06-29');
+    RegExp.$1  第一次捕获结果
+    RegExp.$2  第二次捕获结果
+    RegExp.$3  第三次捕获结果
+    嵌套分组
+    var reg = /((apple) is (a (fruit)))/;
+    reg.exec('apple is a fruit');
+    RegExp.$1
+    反向引用
+    var reg = /(\w{3}) is \1/; //'123 is 123'
+    var reg = /(\w{3}) is \6/; //'123 is \6'
+    
+    String对正则的支持
+    1.search 方法
+    var reg = /hello/g;
+    var str = 'hello world hello'
+    str.search(reg); 返回第一次匹配字符的索引
+    2.match()方法
+    匹配到返回第一次匹配到的数组 [匹配内容,index,input,groups]
+    开启全局匹配 一次性匹配所有符合正则字符 返回到数组中
+    ['hello',index:0,input:'',]
+    ['hello','hello'];
+    var reg = /(he)llo/;['hello','he',input];
+    var reg = /(he)llo/g;['hello','hello'];
+    3.split() 将字符串分割成数组
+    var str = 'terry123larry456tony';
+    str.split(/\d{3}/); ['terry','larry']
+    4.replace 替代正则表达式 不会更改正则和字符串
+    var reg = /hello/;
+    var str = 'hello';
+    var res = str.replace(reg,'world');
+    console.log(res,'world');
+
+    前瞻
+    正向前瞻(?=exp) 后面一定匹配什么
+    负向前瞻(?!exp) 后面一定不要匹配什么
+
+    var str = 'Hello , Hi , xxx';
+    var reg = /H(?=i)/g;
+    str.replace(reg,'T'); // Hello Ti
+
+    var str = 'Hello , Hi , xxx';
+    var reg = /(?=i)/g;
+    str.replace(reg,'T'); // Hello HTi
+
+    var str = 'Hello , Hi , xxx';
+    var reg = /H(?!i)/g;
+    str.replace(reg,'T'); // Tello Ti
+     
+    str = 'Hello , Hi , xxx';
+    var reg = /(?!i)/g;
+    str.replace(reg,'T'); // THTeTlTlTo Hi TxTxTx
