@@ -1,0 +1,93 @@
+/**
+* 设计模式 
+*/
+为了批量创建对象 
+1.工厂模式
+优点：可以批量创建对象
+缺点：不能区分种类 所有对象都是object的实例 方法冗余
+	var sayName = function(){
+
+	} 
+	function person(name,age,gender){
+		return {
+			name:name,
+			age:age,
+			gender:gender,
+			sayName:sayName
+		}
+	}
+	var p1 = person('zhangsan',12,'male');
+	var p2 = person('lisi',12,'female');
+2.构造函数模式
+	优点：可以批量创建对象 区分种类
+	缺点：方法冗余
+	var sayName = function(){}
+	function Person(name,age,gender){
+		//new关键字 
+		//1.创建一个实例对象 
+		//2.将this指向该实例对象
+		//3.执行函数体
+		//4.返回该实例对象 
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.sayName = sayName;
+	}
+	var p1 = new Person('zhangsan',12,'male');
+	var p2 = new Person('lisi',12,'male');
+	console.log(p1,p2) Person{name,age,gender}
+3.原型模式(不单独使用)
+	优点：可以批量创建对象 方法冗余问题 区分种类
+	缺点：所有实例对象属性和方法全部一样 
+	将所有实例的属性和方法全部放在原型对象中
+	function Person(){}
+	Person.prototype.name='lisi';
+	Person.prototype.age=12;
+	Person.prototype = {
+		constructor:Person,
+		name,
+		age,
+		gender,
+		sayName:function(){
+
+		},
+		friends:[]
+	}
+4.组合模式：原型模式 + 构造函数模式	
+	将所有实例私有属性和私有方法全部放在构造函数中
+	将所有实例公共方法和公共属性全部放在原型对象中
+	function Person(name,age,gender){
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.friends= [];
+	}
+	Person.prototype = {
+		constructor:Person,
+		sayName:function(){
+
+		}
+	}
+	var p1 = new Person('zhangsan',12,'male');
+	var p2 = new Person('lisi',12,'male');
+	p1.friends.push('tom');
+	p1{name,age,gender,friends:['tom']}
+	p2{name,age,gender,friends:[]}
+5.instanceof 
+	判断当前实例对象是否是某一个构造函数的实例 
+	判断是否处在原型链中 
+继承 
+	1.原型链继承
+	2.借用构造函数继承 经典继承
+	3.组合继承 1+2 
+实例去访问一个方法或者属性 
+	1.先去自身查找有没有这个属性
+	2.再去原型对象中去查找这个方法或者这个属性
+	3.就去父构造函数原型对象中去访问属性和方法 
+function Person(){}
+var p1 = new Person();
+Person.prototype ;//{}
+p1.say();
+//原型链继承 子构造函数的原型对象指向父构造函数的实例
+Person.prototype = new Object();
+	
