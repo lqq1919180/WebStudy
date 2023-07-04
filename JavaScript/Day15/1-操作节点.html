@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        // 页面加载完毕再执行代码 
+        window.onload = function () {
+            /**
+             * 操作节点 增删改插 只能由父节点来去调用 
+             * 新增节点 appendChild方法
+             * 参数：(新增节点)
+            */
+            var body = document.body;
+            // 新增一个插入body中  createElement 新增元素 新增标签
+            var newNode = document.createElement('div');
+            // 给标签设置内容 textContent innerHTML innerText
+            newNode.textContent = 'four';
+            // 插入新增的节点
+            // body.appendChild(newNode);
+
+
+            /**
+             * 插入节点 insertBefore(插入的节点,参考的节点)
+            */
+            // 获取参考的节点
+            // var second = body.children[1];
+            // body.insertBefore(newNode,second);
+
+            /**
+             * 替换节点 replaceChild(新节点,被替换的节点)
+            */
+            var second = body.children[1];
+            body.replaceChild(newNode, second);
+
+            /**
+             * 移除节点方法 removeChild(要移除某一个节点)
+            */
+            var first = body.children[0];
+            body.removeChild(first);
+        }
+    </script>
+</head>
+
+<body>
+    <div>one</div>
+    <div>two</div>
+    <div>three</div>
+</body>
+
+</html>

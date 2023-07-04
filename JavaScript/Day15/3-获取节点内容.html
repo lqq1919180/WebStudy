@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /**
+             * 获取元素节点内容区别？ 
+             * 1.textContent 只能获取元素节点文本节点 并且会保留代码格式  
+             * 2.innerHTML 识别代码片段 获取元素节点内容,包括元素节点 并且也会保留代码格式
+             * 3.innerText 只能获取元素节点文本节点 去除文本前后空格
+            */
+            var second = document.body.children[0];
+            console.log(second.textContent, '1');
+            console.log(second.innerHTML, '2');
+            console.log(second.innerText, '3');
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <div>我是一个块级元素</div> -->
+    <div>
+        我是一个
+        块级 元素
+        <div>我是一个div</div>
+    </div>
+    <!-- <div>我是 一个 标签</div> -->
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 克隆节点，被克隆节点调用 cloneNode() 参数：true深克隆  false浅克隆 默认是false
+            var second = document.body.children[1];
+            // var four = second.cloneNode();//表示进行浅克隆 默认值是false
+            var four = second.cloneNode(true);//表示进行深克隆
+            document.body.appendChild(four);
+            /**
+             * 深克隆和浅克隆区别？
+             * 1.浅克隆只克隆节点本身 不克隆节点内容
+             * 2.深克隆既克隆节点本身 还克隆节点内容
+            */
+        }
+    </script>
+</head>
+
+<body>
+    <div>one</div>
+    <div class="second">two</div>
+    <div>three</div>
+</body>
+
+</html>

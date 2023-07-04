@@ -1,0 +1,52 @@
+继承 
+	1.借用构造函数继承 经典继承
+		调用父构造函数并且将this指向修改为子构造函数实例
+		Animal.call(this,实参)
+	2.原型链继承
+		子构造函数的原型对象指向父构造函数实例
+		Dog.prototype = new Animal();
+		Dog.prototype.constructor = Dog;
+	3.组合继承 
+		经典继承 + 原型链继承 
+DOM(Document Object Model) 文档对象模型 操作网页的api和接口 
+在文档中所有内容都可以被看成一个节点 所有节点继承Node节点实现 
+节点类型：元素节点 文档节点 文本节点 
+Node类型 
+	1.nodeType 返回节点类型 
+		document 9  element 1 attr 2 text 注释节点 
+	2.nodeName 返回节点纯大写名称 
+		div.nodeName DIV
+	3.nodeValue 返回元素文本节点 返回字符串本身  对元素节点不生效
+		div.文本.nodeValue 
+	4.firstChild 节点第一个孩子
+	5.lastChild  节点最后一个孩子 
+	<div>我是一个文本节点<span>我是行内元素<span></div>
+	6.childNodes 返回的所有的孩子节点（包括文本 注释 元素节点..） 是一个类数组对象 NodeList类数组 
+	7.children 返回所有元素孩子节点 类数组对象
+	8.nextSibling 获取节点的后一个节点 
+	9.previousSibling 获取节点的前一个节点 
+	10.parentNode 返回节点的父节点
+	11.parentElement 返回节点的父元素节点
+	12.hasChildNodes() 判断当前节点是否有子节点
+Element节点
+Document节点 
+Text节点
+
+
+-----------------------------------------------------
+********
+<!-- 
+		事件流：描述的是页面接受事件的顺序
+		分为事件冒泡和事件捕获
+		事件冒泡：事件从内向外触发
+		事件捕获：事件从外向内触发
+		事件流机制：事件捕获--到达目标--事件冒泡
+-->
+事件对象中target属性和currentTarget属性区别？
+	target 指向事件触发目标源 谁触发的事件 target就是谁
+	currentTarget 当前正在执行事件的dom元素 谁正在执行 currentTarget就是谁
+	单击center
+		center 
+			target center    currentTarget  center
+		outer
+		 	target center    currentTarget  outer

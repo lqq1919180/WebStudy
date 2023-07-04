@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            margin: 0 auto;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .center {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 0 auto;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-image: linear-gradient(to right, red, pink, blue);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            /**
+             * 给dom元素绑定事件
+             * 1.获取dom元素
+             * 2.给dom绑定事件
+             * */
+            var outer = document.querySelector('.outer');
+            var center = document.querySelector('.center');
+            var inner = document.querySelector('.inner');
+            outer.onclick = function () {
+                alert('我是outer');
+                console.log(event.target, '触发事件目标源');
+                console.log(event.currentTarget, '当前正在执行事件的dom元素');
+            };
+            center.onclick = function () {
+                alert('我是center');
+                // event.stopPropagation();
+                console.log(event.target, '触发事件目标源');
+                console.log(event.currentTarget, '当前正在执行事件的dom元素');
+            };
+            inner.onclick = function () {
+                alert('我是inner');
+                // 阻止事件冒泡 event 表示当前事件对象
+                // console.log(event, '事件对象');
+                // event.stopPropagation();
+                console.log(event.target, '触发事件目标源');
+                console.log(event.currentTarget, '当前正在执行事件的dom元素');
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 
+        事件流:描述的是页面接受事件的顺序
+        分为事件冒泡和事件捕获
+        事件冒泡: 事件从内向外触发
+        事件捕获: 事件从外向内触发
+        事件流机制: 事件捕获--到达目标--事件冒泡
+     -->
+    <div class="outer">
+        <div class="center">
+            <div class="inner"></div>
+        </div>
+    </div>
+</body>
+
+</html>

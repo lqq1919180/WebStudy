@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /**
+             * 1.获取dom元素
+             * 2.给dom元素绑定事件
+             * 3.声明事件处理程序
+            */
+            var div = document.querySelector('div');
+            var button = document.querySelector('button');
+            button.onclick = function () {
+                div.style.width = '100px';
+                div.style.height = '100px';
+                div.style.backgroundColor = 'pink';
+                div.style.fontSize = '22px';
+                div.innerText = 'hello dom';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>我是div</div>
+    <button onclick="handler()">点击我</button>
+</body>
+
+</html>

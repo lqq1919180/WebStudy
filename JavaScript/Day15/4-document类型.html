@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document类型</title>
+    <script>
+        window.onload = function () {
+            // 1.获取html元素 
+            console.log(document.documentElement);
+            // 2.获取body标签
+            console.log(document.body);
+            // 3.获取文档头声明
+            console.log(document.doctype);
+            // 4.获取选项卡标题
+            console.log(document.title);
+            // 5.获取url路径
+            console.log(document.URL);
+            // 6.获取域名
+            console.log(document.domain);
+            // 7.获取页面来源url referrer 必须使用本地服务器
+            console.log(document.referrer);
+            // 8.获取页面中所有form
+            console.log(document.forms);
+            // 9.获取页面中所有img标签
+            console.log(document.images);
+            // 10.获取页面中所有带有href属性a标签
+            console.log(document.links);
+            // 文档中写入文本html表达式 js代码
+            document.write('<div>我是一个div</div>');
+            /**
+             * 方法：
+             * 1.document.getElementById('one')
+             * 2.document.getElementsByTagName('div')[index]; {0:div,1:div,length}
+             * 3.document.getElementsByClassName('.two')[index]; {0:div,1:div,length}
+             * 4.document.querySelector('');.two <div class='two'></div>
+             * 5.document.querySelectorAll('.two')[index];  {0:div,1:div,length}
+             * 6.document.createElement('div');
+             * 7.document.write('写入代码');
+            */
+        }
+    </script>
+</head>
+
+<body>
+    <form action=""></form>
+    <form action=""></form>
+    <form action=""></form>
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <a href=""></a>
+    <a></a>
+    <a href=""></a>
+</body>
+
+</html>

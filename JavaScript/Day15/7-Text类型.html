@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">我是一个DIV</div>
+    <script>
+        /**
+         * 创建文本节点
+         * */
+        var newText = document.createTextNode('hello word');
+        var div = document.getElementById('container');
+        div.appendChild(newText);
+        console.log(newText.length, newText.nodeType);
+        /**
+         * 替换文本节点内容  replaceData 参数: fromIndex count 替换的内容
+         * */
+        newText.replaceData(0, 5, 'hi');
+        /**
+         * 插入文本内容 参数  fromIndex 插入的内容
+         * */
+        newText.insertData(0, 'dom');
+        /**
+         * 增加文本内容 text
+         * */
+        newText.appendData('块级元素');
+        /**
+         * 删除文本内容  参数  fromIndex 删除数量
+         * */
+        // newText.deleteData(0, 10);
+        /**
+         * 分成两个文本节点  splitText  fromIndex 
+         * */
+        // var res = newText.splitText(5);
+        // console.log(res);
+        /**
+         * 截取文本节点內容 参数  fromIndex  count
+         * */
+        var res= newText.substringData(5,5);
+        console.log(res);
+    </script>
+</body>
+
+</html>

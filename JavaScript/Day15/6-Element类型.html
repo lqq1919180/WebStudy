@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /**
+             * 元素节点属性和方法 
+            */
+            var first = document.getElementsByClassName('first')[0];
+            // 获取属性组成集合 first.attributes.class
+            // console.log(first.attributes.class.nodeType,Array.isArray(first.attributes));
+            // 获取classList类名组成集合
+            console.log(first.classList);
+            // 获取className 类名
+            console.log(first.className);
+            // 获取元素内部高度宽度 距离上方左侧宽高
+            console.log(first.clientWidth);
+            console.log(first.clientHeight);
+            console.log(first.clientTop);
+            console.log(first.clientLeft);
+            // innerText innerHTML 获取元素内部内容
+            // 返回标签名的纯大写名称
+            console.log(first.tagName);
+
+            /**
+             * 元素节点方法
+            */
+            // 获取属性对应的属性值 参数：属性名
+            console.log(first.getAttribute('id'));
+            // 设置属性 参数:属性名 属性值
+            first.setAttribute('title', '我是标签的提示说明');
+            // 设置自定义属性
+            first.setAttribute('flag', '我是一个自定义属性');
+            console.log(first.getAttribute('flag'));
+            console.log(first.getAttribute('flag1'));
+            console.log(first.getAttribute('data-attr'));
+            console.log(first);
+
+            // 自定义属性一般使用data-开头 标签可以直接读取自身属性  否则直接使用标签读取是undefined 
+            console.log(first.id, first.className, first.flag1);
+
+            first.innerHTML = '<span>我是行内元素</span>';
+            first.style.width = '100px';
+            first.style.height = '100px';
+            first.style.backgroundColor = 'red';
+            first.style.fontSize = '28px';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="first" id="one" flag1="自定义属性" data-attr="hello dom">我是一个块级元素</div>
+</body>
+
+</html>
