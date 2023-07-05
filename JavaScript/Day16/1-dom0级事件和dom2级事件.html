@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var btn = document.querySelector('button');
+            // dom0级事件绑定 on事件类型  dom0级不可以追加同一类型事件 追加执行最后一次事件处理程序
+            btn.onclick = function () {
+                console.log(this);
+            };
+            // 追加事件 
+            btn.onclick = function () {
+                alert('第二次事件');
+            };
+            // dom0级事件解绑 
+            btn.onclick = null;
+
+            /**
+             * dom2级事件 addEventListener('事件类型',事件处理程序,true/false)
+             * true表示执行事件捕获 false表示执行事件冒泡 
+             * dom2级事件可以追加事件
+            */
+            function handler1 () {
+                console.log(this);
+            }
+            function handler2 () {
+                alert('第二次事件');
+
+            }
+            btn.addEventListener('click', handler1);
+            btn.addEventListener('click', handler2);
+
+            // dom2级事件解绑removeEventListener('事件类型',具名函数事件处理程序)
+            // function add(){}
+            btn.removeEventListener('click', handler1);
+            /**
+             * dom0级和dom2级事件区别？
+             * 1.dom0级绑定事件使用on关键字绑定  解绑on事件类型设置为null
+             * 2.dom2级事件绑定使用addEventListener 解绑使用removeEventListener
+             * 3.dom0级事件不可以追加同一类型事件 追加就是覆盖
+             * 4.dom2级事件可以追加同一类型事件 追加就依次执行
+            */
+        }
+    </script>
+</head>
+
+<body>
+    <button>点击我</button>
+</body>
+
+</html>

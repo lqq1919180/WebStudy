@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid royalblue;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var input = document.querySelector('input');
+            /**
+             * 绑定选择事件 在输入框选择字符时候就触发
+            */
+            // input.onselect = function () {
+            //     console.log('我被选择了');
+            //     console.log(window.getSelection().toString());
+            // };
+
+            /**
+             * resize 方法 窗口进行缩放时候触发
+            */
+            // document.body.onresize = function () {
+            //     console.log(window.outerHeight, window.outerWidth);
+            // };
+
+            /**
+             * scroll 事件 绑定滚动事件 
+            */
+            var div = document.querySelector('div');
+            // div.onscroll = function () {
+            //     console.log('我在滚动');
+            // };
+
+            /**
+             * 聚焦focus 失焦 blur
+            */
+            // input.onfocus = function () {
+            //     this.style.backgroundColor = 'pink';
+            //     this.setAttribute('placeholder', '请输入文字');
+            // };
+            // input.onblur = function () {
+            //     this.style.backgroundColor = 'white';
+            //     this.setAttribute('placeholder', '请单击输入框');
+            //     // console.log('请单击输入框');
+            // };
+
+            /**
+             * 双击 dbclick
+            */
+            div.ondblclick = function () {
+                console.log('我被双击了');
+            };
+            /**
+             * 鼠标移入 鼠标移除 鼠标一直移动
+            */
+            div.onmouseenter = function () {
+                console.log('鼠标移入');
+            };
+            div.onmouseleave = function () {
+                console.log('鼠标移出');
+            };
+            div.onmousemove = function () {
+                console.log('鼠标一直在移动');
+            };
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>我是一个div我是一个div我是一个div我是一个div
+        我是一个div我是一个div我是一个div我是一个div
+        我是一个div我是一个div我是一个div我是一个div
+        我是一个div我是一个div我是一个div我是一个div我是一个div
+    </div>
+    <input type="text">
+</body>
+
+</html>

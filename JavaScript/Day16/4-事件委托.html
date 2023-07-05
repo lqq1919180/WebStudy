@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var ul = document.querySelector('ul');
+            // 给所有li绑定事件 点击的时候背景色变成红色 
+            var lis = document.querySelectorAll('li');
+            // for (var i = 0; i < lis.length; i++) {
+            //     lis[i].onclick = function () {
+            //         this.style.backgroundColor = 'red';
+            //     };
+            // }
+            var newLi = document.createElement('li');
+            newLi.innerText = '第11个li';
+            ul.appendChild(newLi);
+            /**
+             * 事件委托 将子元素事件代理给父元素 只绑定一次事件 管理一类事件
+            */
+            ul.onclick = function () {
+                // event 事件对象 event.target 
+                // event.target.style.backgroundColor = 'red'
+                var target = event.target;
+                if (target.tagName === 'LI') {
+                    target.style.backgroundColor = 'red';
+                }
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 
+		事件委托(事件代理) *****
+			原理：利用事件冒泡 只指定一个事件处理程序 就可以管理某一类型的事件
+			将本应该绑定给子元素事件绑定给父元素
+			目的：优化页面性能 减少事件的执行 减少浏览器的重排(回流)和重绘 给新增的元素绑定事件
+	 -->
+    <ul>
+        <li>第1个li</li>
+        <li>第2个li</li>
+        <li>第3个li</li>
+        <li>第4个li</li>
+        <li>第5个li</li>
+        <li>第6个li</li>
+        <li>第7个li</li>
+        <li>第8个li</li>
+        <li>第9个li</li>
+        <li>第10个li</li>
+    </ul>
+</body>
+
+</html>

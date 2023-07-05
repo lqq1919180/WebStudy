@@ -1,0 +1,81 @@
+Node类型方法
+	操作节点 只能由父节点去调用
+		appendChild() 添加一个节点
+		insertBefore(插入的节点,参考节点) 插入节点
+		replaceChild(插入的节点,被替换节点)  
+		removeChild(移除的节点) 
+	克隆节点
+		cloneNode 克隆节点 克隆者调用
+		参数：true  false
+		浅克隆：参数为false就是浅克隆 只克隆节点本身 不克隆内容
+		深克隆：参数为true就是深克隆 既克隆节点 也克隆节点内容
+Document类型
+	属性:
+		documentElement 获取html元素
+		body  获取body元素
+		doctype 获取文档头声明
+		url  获取地址
+		title  获取选项卡标题
+		referrer 获取页面来源
+		domain 获取域名
+		forms 获取所有表单元素
+		links  获取所有的带有href属性a标签
+		images 获取所有图片标签img
+	方法
+		获取dom元素 
+		document.getElementById('');
+		document.getElementsByTagName('');类数组
+		document.getElementsByClassName('');类数组
+		document.querySelector('');
+		document.querySelectorAll('');
+		document.createElement(''); 
+		document.write();在文档中写入
+Element类型
+	属性：
+		classList  由类名组成的集合 ['','']
+		className 获取类名
+		attributes 获取属性组成的集合 ['id=one',class='two']
+		clientHeight
+		clientWidth
+		clientTop
+		clientLeft
+		innerHTML 识别代码片段 v-html
+		innerText
+	方法
+		getAttribute() 获取属性名对应的属性值
+		setAttribute('属性名','属性值') 设置属性
+	data-自定义属性通过getAttribute去访问 
+Text类型
+	length 长度
+	appendData();
+	insertData(formIndex,text); 插入文本
+	deleteData(formIndex,count);
+	replaceData(formIndex,count,text)
+	splitText(fromIndex) 返回后一个文本节点
+	substringData(fromIndex,count); 截取文本内容
+	createTextNode() 创建文本节点
+获取元素内容的属性 *****
+	textContent 获取内部文本内容 保留代码格式 
+	innerHTML 识别代码片段 解析标签 保留代码格式 
+	innerText 只能获取内部文本内容 去除文本前后空格
+DOM事件机制
+	事件三要素:
+		1.事件源 
+		2.事件类型 click keyup keydown
+		3.事件处理程序 
+	事件流
+		描述的是页面接受事件的顺序 
+		包括事件冒泡和事件捕获 
+	事件冒泡：事件从内向外触发至document对象
+	事件捕获：事件从外向内触发至最小dom元素
+	机制：事件捕获--->到达目标---->事件冒泡
+阻止事件冒泡：
+	event.stopPropagation()
+event.target和event.currentTarget区别？
+	target表示目标事件源 当前事件是被谁触发的 target指向谁
+	currentTarget 表示当前正在触发事件的dom元素 
+阻止事件默认行为
+	event.preventDefault()
+	表单提交按钮提交行为
+	a标签跳转行为
+事件委托 事件代理 

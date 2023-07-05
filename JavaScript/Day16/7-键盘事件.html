@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var input = document.querySelector('input');
+            //键盘按下事件 keydown 按键 keyCode
+            input.onkeydown = function () {
+                console.log(event.keyCode);
+            };
+            // 键盘抬起事件 keyup 
+            input.onkeyup = function () {
+                console.log('我被抬起了');
+            };
+            // 键盘持续按下事件 
+            input.onkeypress = function () {
+                console.log('持续按下');
+            };
+            //输入框输入事件 获取文本输入值
+            input.addEventListener('textInput', function (event) {
+                console.log(event.data);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text">
+</body>
+
+</html>

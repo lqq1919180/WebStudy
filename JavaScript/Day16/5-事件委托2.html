@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var ul = document.querySelector('ul');
+            // 点击不同li内部内容 发生不同改变;
+            // var item1 = document.querySelector('#first');
+            // var item2 = document.querySelector('#second');
+            // var item3 = document.querySelector('#three');
+            // item1.onclick = function () {
+            //     this.innerText = 'hello html';
+            // };
+            // item2.onclick = function () {
+            //     this.innerText = 'hello css';
+            // };
+            // item3.onclick = function () {
+            //     this.innerText = 'hello js';
+            // };
+            ul.onclick = function () {
+                var target = event.target;
+                // console.log(target);
+                switch (target.id) {
+                    case 'first':
+                        target.innerText = 'hello html';
+                        break;
+                    case 'second':
+                        target.innerText = 'hello css';
+                        break;
+                    case 'three':
+                        target.innerText = 'hello js';
+                        break;
+                    default:
+                        target.innerText = '我是li标签';
+                }
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li id="first">li标签</li>
+        <li id="second">li标签</li>
+        <li id="three">li标签</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var btn = document.querySelectorAll('button')[0];
+            var btn2 = document.querySelectorAll('button')[1];
+            btn.onclick = function () {
+                // 打开一个页面  open 参数:url name 可配置对象 true false
+                // window.open('https://www.baidu.com','_blank','height=800px,width=800px',false);
+                w = window.open('https://www.baidu.com', '_blank', 'height=600px,width=600px');
+                // console.log(w,'接收的是一个窗口对象');
+                //resizeTo 新窗口宽高
+                w.resizeTo(400, 400);
+                // 设置新窗口位置
+                w.moveTo(100, 100);
+            };
+            btn2.onclick = function () {
+                // 关闭窗口
+                w.close();
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <button>点击我</button>
+    <button>关闭新窗口</button>
+</body>
+
+</html>
