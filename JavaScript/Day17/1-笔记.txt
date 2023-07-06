@@ -1,0 +1,129 @@
+事件流*****
+	描述页面接收事件的顺序 分为事件冒泡 事件捕获
+	事件捕获 事件从外向内触发
+	事件冒泡 事件从内向外触发
+	事件捕获  到达目标  事件冒泡
+DOM0级事件和DOM2级事件
+	0级事件绑定  不可以追加同一类型事件
+	button.onclick = function(){}
+	button.onclick = function(){}
+	0级事件解绑
+	button.onclick = null
+
+	2级事件绑定 可以追加同一类型的事件
+	function handler(){}
+	button.addEventListener('事件类型',handler,true/false)
+	button.addEventListener('事件类型',事件处理程序,true/false)
+	true表示事件在事件捕获阶段执行 
+	false表示事件在事件冒泡阶段执行
+	2级事件进行解绑
+	button.removeListener('事件类型',handler)
+阻止事件默认行为
+	表单提交行为 a标签跳转行为 
+	event.preventDefault()
+阻止事件冒泡
+	event.stopPropagation()
+事件委托 事件代理 ****
+	利用事件冒泡 只指定一个事件处理程序 就可以管理某一类型的事件 
+	将本应该绑定给子元素的事件绑定给父元素
+	目的：减少浏览器的重排和重绘 优化页面性能 减少事件执行的次数 给新增的元素绑定事件
+事件类型：
+	onload 
+	unload 
+	resize 浏览器窗口大小发生改变
+	select 输入框选择字符时候会触发 
+		window.getSelection().toString() 火狐不支持 谷歌支持
+	click 单击时候触发
+	dbclick 双击时候触发
+	keydown 键盘按下
+	keyup 键盘抬起
+	keypress 持续按下 
+	mouseenter 鼠标移入
+	mouseleave鼠标离开 
+	mousemove 鼠标一直移动
+	textInput 输入框输入事件 
+		event.data 
+	火狐不支持 谷歌支持
+BOM (Browser Object Model) 浏览器对象模型
+	操作浏览器的api和接口
+1.global作用域
+	nodejs
+		console.log(this);//{}
+		var name = 'terry';
+		name='terry';
+		var sayName = function(){
+			console.log(this.name);//global.name
+		} 
+		sayName()
+	浏览器
+		var name = 'terry';
+		name='terry';
+		var sayName = function(){
+			console.log(this.name);//window.name
+		} 
+		sayName()
+2.window.open();
+	打开一个页面 
+	window.open(url,name,配置,false/true)
+	var w = window.open(url,name,配置,false/true) 返回值返回一个窗口对象
+	w.resizeTo(400,400);
+	w.moveTo(100,100)
+	w.close() 关闭窗口
+3.window属性
+	screenX screenY 窗口位置 00 -7 -7
+	outerHeight 浏览器高
+	outerWidth	浏览器宽
+	innerWidth  浏览器视口区域宽
+	innerHeight	浏览器视口区域高
+4.系统对话框
+	弹框 alert();
+	确认框 confirm() 确定 取消  true false 
+	输入框 prompt() 输入字符串 null 
+5.location对象 
+6.history对象 
+7.超时调用间歇调用 
+8.ajax 
+
+js事件循环 防抖和节流 ****
+ES6 VUE 
+	
+AJAX 
+	异步JavaScript和xml,是一种创建交互式网页应用的网页开发技术,
+	用于浏览器和服务器数据交互.
+	new XMLHttpRequest(); 创建一个请求实例 
+	请求方式
+	get post 带不带参数 参数格式不一样 
+	如何发起一个ajax请求?
+		步骤:
+			1.
+			2.
+			3.
+			4.
+			5.
+	
+var obj = {
+			page:1,
+			pageSize:10
+		}
+		function queryString(obj){
+			var str = ''
+			for(let key in obj){
+				str+=`&${key}=${obj[key]}`
+			}
+			str = str.replace('&','?');
+			return str
+		}
+		var res = queryString(obj);
+		function parse(res){
+			var obj = {};
+			res.split('&').forEach((item)=>{
+				if(item.includes('?')){
+					item = item.slice(1)
+				}
+				let key = item.split('=');
+				obj[key[0]]=+key[1];
+			})
+			return obj
+		}
+		console.log(parse(res));
+	

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = {
+            name: 'terry',
+            age: 12,
+            title: '标题'
+        };
+        // 转换成查询字符串 ?name=terry&age=12&title=标题
+        function querystring (obj) {
+            var str = '';
+            for (let key in obj) {
+                // key 属性名 obj[key] 属性值
+                str += '&' + key + '=' + obj[key];
+            }
+            // console.log(str);
+            str = str.replace('&', '?');
+            return str;
+        }
+        var res = querystring(obj);
+        // res ?name=terry&age=12&title='标题' 将查询字符串转为对象
+        function parse (res) {
+            var obj = {};
+            // console.log(result); // [ "?name=terry", "age=12", "title=标题"]
+            res.split('&').forEach(function (item) {
+                if (item.includes('?')) {
+                    item = item.slice(1);
+                }
+                console.log(item); // name=terry age=12 title=标题
+                let newArr = item.split('=');
+                // console.log(newArr); // [name,terry] [age,12] [title,标题]
+                obj[newArr[0]] = newArr[1];
+            });
+            return obj;
+        }
+        console.log(parse(res));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

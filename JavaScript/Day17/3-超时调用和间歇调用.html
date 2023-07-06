@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /**
+             * 超时调用 超过一段时间后调用一次函数
+             * setTimeout(函数，wait) wait单位毫秒
+             * 返回值:返回一个id 用于取消时 使用
+             * 取消超时调用clearTimeout(id)
+             */
+            // var id = setTimeout(function () {
+            //     alert('我是超时调用');
+            // }, 3000);
+            // clearTimeout(id);
+            // console.log(id);
+
+            /**
+             * 间歇调用 每隔一段时间函数执行一次
+             * 参数:函数 wait
+             * 返回值:返回一个id 取消间歇调用 clearInterval(id)
+             */
+            // var id = setInterval(function () {
+            //     console.log('1');
+            // }, 2000);
+            // clearInterval(id);
+
+            // var div = document.createElement('div');
+            // setInterval(function () {
+            //     div.innerHTML = new Date().toLocaleString();
+            // }, 1000);
+            // document.body.appendChild(div);
+
+            // var div = document.body.children[0];
+            // setInterval(function () {
+            //     var now = new Date().toLocaleString();
+            //     div.firstChild.appendData(now);
+            // }, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <div>我是一个div</div>
+    <div>我是块级元素</div>
+</body>
+
+</html>

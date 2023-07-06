@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.11.1/qs.js"></script>
+    <script>
+        // 1.创建一个请求实例
+        var xhr = new XMLHttpRequest();
+        // 2.1打开一个链接
+        xhr.open('post', 'http://121.199.0.35:8888/baseUser/saveOrUpdate');
+        var obj = {
+            username: '李白',
+            password: '888888',
+            telephone: 15536332886
+        };
+        // 2.2设置请求头格式
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+        // 3.发送请求
+        xhr.send(Qs.stringify(obj));
+        // 4.监听状态改变 接收响应
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(JSON.parse(xhr.response));
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

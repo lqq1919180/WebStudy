@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // 发送一个请求
+            /**
+             * 1.创建一个实例
+             */
+            var xhr = new XMLHttpRequest();
+            // console.log(xhr);
+            /**
+             * 2.打开一个链接
+             * open 参数:请求方式 请求路径
+             */
+            xhr.open('get', 'http://121.199.0.35:8888/index/carousel/findAll');
+            /**
+             * 3.发起请求
+             * send() get请求参数携带在地址栏上 post请求携带参数携带在请求体中
+             */
+            xhr.send();
+            /**
+             * 接受响应 监听状态改变onreadystatechange
+             * 响应数据 readyState 4 表示响应完成  status 200 表示响应成功
+             * readyState 0 open未调用  1 open 已经调用  2接受响应头信息 3接受响应体信息
+             * 4响应完成
+             */
+            xhr.onreadystatechange = function () {
+                // 表示响应完成 表示响应成功
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // console.log(xhr.response,'接收响应体');
+                    // 后端返回的数据格式 是json字符串
+                    var res = JSON.parse(xhr.response);
+                    // console.log(res);
+                    // 循环创建图片和div 将url给到img src属性
+                    res.data.forEach(function (item) {
+                        // console.log(item, '------');
+                        var img = document.createElement('img');
+                        var div = document.createElement('div');
+                        div.innerHtml = item.status + '' + item.introduce;
+                        img.src = item.url;
+                        img.style.width = '200px';
+                        document.body.appendChild(div);
+                        document.body.appendChild(img);
+                    });
+                }
+            };
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

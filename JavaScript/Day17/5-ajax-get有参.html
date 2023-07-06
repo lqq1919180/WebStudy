@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.11.1/qs.js"></script>
+    <script>
+        window.onload = function () {
+            /**
+             * get请求带参数  分页查询  一页查询10条数 page1 pageSize10 
+             */
+            // 1.创建一个xmlHttpRequest请求实例
+            var xhr = new XMLHttpRequest();
+            var params = {
+                page: 1,
+                pageSize: 10
+            };
+            // 将对象转为查询字符串 Qs.stringify()
+            var paramsString = Qs.stringify(params);
+            // ?page=1&pageSize=11 查询字符串
+            // 2.打开一个链接
+            xhr.open('get', 'http://121.199.0.35:8888/index/article/pageQuery' + '?' + paramsString);
+            // 3.发送请求
+            xhr.send();
+            // 4.监听状态改变 接收响应
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.response);
+                    console.log(response);
+                    var dl = document.createElement('dl');
+                    response.data.list.forEach(function (item) {
+                        var dt = document.createElement('dt');
+                        var dd = document.createElement('dd');
+                        dt.innerHTML = item.title;
+                        dd.innerHTML = item.content;
+                        dl.appendChild(dt);
+                        dl.appendChild(dd);
+                        document.body.appendChild(dl);
+                    });
+                }
+            };
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

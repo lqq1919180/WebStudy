@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // console.log(location.href);
+            // console.log(location.host);
+            // console.log(location.hostname);
+            // console.log(location.protocol);
+            // console.log(location.port);
+            /**
+             * 1.assign() 页面跳转 参数:url 会在浏览器中产生一条历史记录
+             */
+            var btn1 = document.body.children[0];
+            btn1.onclick = function () {
+                // 页面跳转
+                location.assign('./2-测试.html');
+            };
+
+            /**
+             * replace 方法 参数:要替换页面的路径  可以进行页面跳转  替换页面  
+             * 不会在浏览器中产生历史记录
+             */
+            var btn2 = document.body.children[1];
+            btn2.onclick = function () {
+                // 替换页面
+                location.replace('./2-测试.html');
+            };
+
+            /**
+             * 刷新页面 reload 方法 参数:默认是false true
+             * false 请求缓存资源  true强制从服务器请求数据
+             */
+            var btn3 = document.body.children[2];
+            btn3.onclick = function () {
+                /**
+                 *  小刷 和 大刷 的区别？
+                 *  小刷: f5刷新文档 请求浏览器缓存资源
+                 *  大刷: 请求服务器资源
+                 */
+                location.reload(true);
+                // history 获取用户访问网址数
+                console.log(history.length);
+            };
+
+            /**
+             * forward 前进一个页面
+             */
+            var btn4 = document.body.children[3];
+            btn4.onclick = function () {
+                // history.forward();
+                history.go(1);
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <button>跳转页面</button>
+    <button>替换页面</button>
+    <button>刷新页面</button>
+    <button>前进一个页面</button>
+</body>
+
+</html>

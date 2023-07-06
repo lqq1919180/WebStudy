@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.创建一个请求实例
+        var xhr = new XMLHttpRequest();
+        // 2.1 打开一个链接
+        var obj = {
+            username: 'admin1',
+            password: 123321
+        };
+        xhr.open('post', 'http://121.199.0.35:8888/user/login');
+        // 2.2 设置请求头位json格式 setRequestHeader
+        /**
+         * 1.Content-Type application/json 设置json格式
+         * 2.Content-Type application/x-www-form-urlencode 设置为表单格式
+         * 3.Content-Type text/plain;charset=UTF-8 默认值
+         */
+        xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+        // 3.发送请求
+        xhr.send(JSON.stringify(obj));
+        // 4.监听状态改变 接收响应
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(JSON.parse(xhr.response));
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
