@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+			height: 3000px;
+		}
+	</style>
+	<script>
+		window.onscroll = throttle(function(){
+			alert('我被调用了')
+		},2000)
+		function throttle(fun,wait){
+			// 定义一个变量控制定时器执行的频率
+			let id;
+			return function(){
+					if(!id){
+						id = setTimeout(function(){
+							fun();
+						// 为了持续等待wait事件执行定时器一次
+							id = null;
+						},wait);
+					}
+				// 限制事件执行频率
+				// t = false;
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

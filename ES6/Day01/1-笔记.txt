@@ -1,0 +1,132 @@
+防抖和节流
+	目的：优化高频率事件触发得手段
+防抖：在一定时间内再次触发该函数，则会重新计算时间，超过预定时间，则会执行最后一次函数
+input.oninput = debounce(function(){
+	console.log(this.value)
+},2000)
+function debounce(fun,wait){
+	let time;
+	return function(){
+		if(time!=null){
+			clearTimeout(time)
+		}
+		var that = this;
+		time = setTimeout(function(){
+			fun.call(that)
+		},wait)
+	}
+}
+节流：每隔一段时间函数只会执行一次，限制事件执行得频率
+	function throttle(fun,wait){
+		let t = true;
+		return function(){
+			if(t){
+				setTimeout(function(){
+					fun();
+					t = true;
+				},wait)
+			}
+			t = false;
+		}
+	}
+ES6 ES5下一代标准 
+	基于ES5弱点新增新特性:
+		变量 箭头函数 解构 模板字符串 类 class 继承 数组API拓展 对象API promise承诺对象
+		模块化 转码工具babel  迭代器 Generator
+	模块化：
+		a模块 b模块变量函数 
+		hello.vue  
+		ES6模块化开发
+		CommonJS模块化
+		AMD模块化 
+	铺垫：转码工具使用 babel-cli 
+		将高版本代码转成低版本得代码 ES14 -----> ES5
+		ES6    2015年6月
+		ES7	   2016 
+		ES8	   2017
+		ES14	 2023
+	当前模块进行安装
+		Day01 初始化为项目 package.json 模块配置信息 
+		npm init 初始化项目 
+		安装转码工具和预设 npm/cnpm/yarn/pnpm/.....
+		安装转码工具 Day01
+			cnpm install babel-cli --save-dev 局部安装 安装依赖到当前模块
+			安装预设 cnpm install babel-preset-latest --save-dev
+			转码高版本代码 什么规则进行转换 设置转换规则
+			cnpm install babel-cli babel-preset-latest --save-dev(-S-D);
+		新建.babelrc设置转换规则
+		将当前文件转码
+		babel xxx.js
+		将当前文件转码后输出另外一文件
+		babel 1-hello.js --out-file 2-a.js
+		将当前目录转码后输出到另一个目录
+		babel src --out-dir dist
+		src
+			a.js	()=>{}
+			b.js 	()=>{}
+			c.js  ()=>{}
+	
+	包管理工具/包管理机制 *****
+		nodejs 会自带一些包管理工具 npm
+		npm 下载一些依赖 存在于package.json模块配置文件中 
+		服务器部署在外国 受网络影响比较大 
+		35 25/下载失败 整个项目运行无法成功 
+		cnpm 下载一些依赖 中国版得npm  淘宝团队重新在国内服务器部署了包管理工具cnpm
+		速度稍微快一点 仓库地址：淘宝镜像 taobao.org  现在地址:npmmirror
+		yarn 下载一些依赖 支持离线模式 会先从缓存中寻找依赖 不会直接下载
+		
+	模块化：	
+		ES6 模块化
+			导入变量和函数
+			导入变量和函数
+		commonjs模块化	
+			导入变量和函数
+			导入变量和函数
+	a模块 想要使用b模块当中变量和函数和属性....
+	通信：模块化通信
+	默认nodejs不支持es6模块化,如果需要支持es6模块化需要在package.json模块配置文件中
+	设置'type':'module' 并且在引入某一个模块中变量得时候需要加上文件后缀名 否则不生效
+
+	ES6模块化导出
+		1.列表导出 
+			export {firstName,lastName}
+		2.重命名导出
+			export {firstName as first,lastName as last}
+		3.导出单个属性 单个函数
+			export var a = 1;
+			export function get(){
+
+			}
+		4.默认导出
+			export default {
+				firstName,
+				lastName
+			}
+	ES6模块引入
+		1.列表引入
+			import {firstName,lastName} from 'xx.js';
+		2.重命名引入 
+			import {first as f,last as l} from 'xx.js';
+		3.引入导出得单个属性 
+			import {a,test} from 'xxx.js'
+		4.引入默认导出得内容
+			import 变量名 from 'xxx.js'
+		5.引入所有使用export关键字导出得变量函数
+			import * as 变量名 from 'xxx.js'
+	Commonjs模块化规范 
+		1.导出:
+			module.exports = {
+				变量
+			}
+		2.导入:
+			let {变量} = require('xxxx');//commonjs可以省略文件后缀
+	区别:
+		1.commonjs输出得值得复制,es6模块输出得是值得引用
+		2.commonjs运行时候加载,es6编译时候加载
+		3.导入commonjs文件后缀名可以省略,es6模块文件后缀名不可以省略(在package.json中设置type:'module')
+		默认type为commonjs
+
+momentjs  lodash 使用全部是commonjs模块 es6模块化
+
+	
+	
