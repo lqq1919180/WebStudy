@@ -1,0 +1,109 @@
+1.转码工具babel 
+	安装：
+		cnpm/npm install babel-cli --save-dev
+	安装预设：
+		cnpm install babel-preset-latest -S-D
+	指定转换规则 新建.babelrc文件 
+	{
+		"presets":["latest"]
+	}
+	使用：
+		1.对当前文件进行转码 1-hello.js
+		babel 1-hello.js
+		2.将当前文件转码后输出到另外一个文件
+		babel 1-hello.js --out-file 2-a.js	
+		3.将当前目录转码后输出到另外一个目录
+		babel src --out-dir dist
+2.包管理工具
+	npm 
+		下载依赖 nodejs自带得包管理工具 下载依赖存在package.json模块配置文件
+		服务器部署外国 受网络影响较大
+	cnpm 
+		中国版得npm 淘宝团队将cnpm部署在国内服务器 下载依赖 
+	yarn 
+		提供了离线模式 下载依赖会先查找缓存 再进行依赖下载
+3.模块化
+	ES6和commonjs模块化
+	ES6模块化导出：
+		1.列表导出
+		export {变量1,变量2}
+		2.重命名导出
+		export {变量1 as 新变量名}
+		3.导出单个属性或者单个函数
+		export let a = 1;
+		export function get(){}
+		4.默认导出(一个模块只能有一个默认导出)
+		export default {
+			.....
+		}
+	ES6模块化导入:
+		let first;
+		1.列表导入 
+		直接在node终端运行es6模块化机制,在package.json文件中 设置type:module 默认type:commonjs
+		import {变量1,变量2} from 'xxx.js'
+		2.重命名导入 
+		import {变量名 as 新变量} from 'xxx.js';
+		3.导入单个属性 
+		import {a,get} from 'xxx.js'
+		4.默认导入
+		import  person  from 'xxx.js'
+		person{
+			默认导出的内容
+		}
+		5.引入所有使用export导出得内容
+		import * as obj from 'xxx.js'
+	Commonjs模块化导出:
+		module.exports = {
+			first,
+			last
+		}
+		module.export.first = 'zhangsan';
+		module.export.last = 'zhangsan';
+	Commonjs模块化导入
+		let {first,last} = require(''xxx.js)
+	区别：
+		1.Commonjs输出得是值得拷贝/赋值,ES6输出得是一个值得引用 
+		2.Commonjs在运行时候进行加载,ES6编译时进行加载
+		3.Commonjs是node支持得模块化规范,导入可以省略文件后缀名
+			ES6文件后缀名不可以直接省略 type:module
+4.变量 var let const 区别?
+	var特点:
+		1.进行变量提升,不存在暂时性死区 
+		2.可以重复声明可以重新赋值 var a =1;var a = 2;// var a =1;a=2;
+		3.不存在块级作用域  if(){} for(){} 污染全局变量 
+		4.可以在声明得时候不进行初始化
+	let特点:
+		1.不可以进行变量提升,存在暂时性死区
+		2.不可以重复声明但是可以重新赋值  let a =1;let a = 2;报错 // let a=1;a=2;
+		3.存在块级作用域 if(){} for(){}
+		4.可以在声明得时候不进行初始化
+	const特点:
+		1.不可以变量提升，存在暂时性死区
+		2.不可以重复声明也不可以重新赋值 const a =1;const a =2; const b=1;b=2;//报错
+		3.存在块级作用域 if(){} for(){}
+		4.声明时候必须进行初始化 const a;//报错 const a = 1;
+		5.对于基本数据类型一旦声明无法修改,对于引用数据类型声明之后可以修改
+			const a = 1;
+			const obj = {};
+			obj.name = 'zhangsan';
+			const arr = [];
+			arr[1] = 'hello'
+
+ES7 新增特性:
+	includes 
+	指数 2**3  Math.pow(2,3)
+解构:
+	对象静态API拓展
+		1.Object.is(a,b) 判断两个值是否相等
+		2.Object.assign(o,obj);目标对象 复制对象返回目标对象
+			基本数据类型实现得是深拷贝 引用数据类型实现得浅拷贝
+			Object.assign(o,obj,obj1);合并对象 目标对象 要合并的对象1 合并的对象2 返回目标对象
+		3.Object.getPropertypeOf(obj) 访问原型
+		4.Object.setPropertypeOf(obj,obj1) 设置原型
+		3.Object.getPropertypeOf(obj) 访问原型
+		5.Object.keys()  返回对象属性名组成得数组
+		6.Object.values()  返回对象属性值组成得数组
+		7.Object.entries()  返回对象属属性名和属性值值组成得数组
+		8.Object.fromEntries()  将属性名和属性值组成数组返回成普通对象
+
+		
