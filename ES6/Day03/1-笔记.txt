@@ -1,0 +1,122 @@
+1.解构
+	等号左右两侧模式严格匹配 
+	数组解构
+		let [a,b,c,d] = [1,2,3,4]
+		let [a,b,c,d] = [1,2,[3,4,5],4]
+		let [a,b,[c],d] = [1,2,[3,4,5],4]
+		let [...arr] = [1,2,3,4]
+	对象解构
+	 let {foo,bar}  = 	{foo:'hello',bar:'world'}
+	 let {foo:foo,bar:bar}  = 	{foo:'hello',bar:'world'}
+	 给变量重命名
+	 let {foo:a}  = 	{foo:'hello',bar:'world'};
+	 嵌套解构
+	 let {p:[a,{y:b}]} = {p:['hello',{y:'world'}]}
+	 默认值解构
+	 let {x=1,y=2} = {x:"hello",y:'world'}
+	 let {x=1,y=2} = {}
+	字符串解构
+	  let [a,b,c,d,e] = 'hello';
+	  let [...arr] = 'hello';
+		let {toString,valueOf,length} = 'hello'
+	数值  let {toString,valueOf} = 10
+	布尔值  let {toString,valueOf} = true
+2.箭头函数
+		内部没有this 
+		(形式参数)=>{ 
+			//内部不使用arguments保存实际参数列表
+			使用rest参数 ...a
+		}
+		箭头函数本身没有this this指向声明箭头函数外部作用域中this
+3.箭头函数和普通函数区别？*****
+	1.箭头函数没有this,this指向声明箭头函数外部作用域中this
+	2.普通函数this单独使用，指向全局对象，如果函数成为方法，this指向调用者
+	3.箭头函数表现形式和普通函数不一样
+	4.箭头函数不在用arguments保存实际参数列表，用rest参数
+	5.普通函数使用arguments保存实际参数列表
+	6.箭头函数没有原型对象 普通函数有原型对象
+4.函数参数解构
+	function test([a,b,c,d]){
+
+	}
+	test([1,2,3,4])
+	尾参数：形参中如果有一个形参赋予默认值，就自动成尾参数，尾参数和后面参数不计入函数长度计算
+	function foo(a,b=1,c,d){
+
+	}
+	foo()
+	foo.length --->1
+5.对象API拓展
+	静态方法 
+	Object.is(+0,-0);//false
+	(+0===-0);//true
+	Object.is(NaN,NaN);//true
+	(NaN===NaN);//false
+
+	assign 
+		两个参数 目标对象 要复制的对象
+		返回值：返回目标对象
+			复制对象 深拷贝 半深拷贝
+		let o ={};
+		let obj = {
+			name:"zhangsan",
+			age:12,
+			gender:'male',
+			clazz:{
+				no:"1001'
+			}
+		}
+		let res = Object.assign(o,obj);  res ===o //true
+		
+		三个参数
+			目标对象 合并对象1 合并对象2
+			返回值：返回得目标对象
+	
+	getPrototypeOf() 访问原型对象 一个参数:obj
+	setPrototypeOf() 设置原型对象 两个参数 obj 新原型对象
+	keys()  返回对象属性名组成得数组
+	values()	返回对象属性值组成得数组
+	entries()  返回对象属性名和属性值组成得数组
+	fromEntries() 返回对象属性名和属性值组成得对象
+	defineProproty()
+	defineProproties()
+
+6.数组API拓展 
+	静态方法
+	from() 将类数组转为数组对象
+	of() 	创建实例实例
+	实例方法
+	find((item,index,arr)=>{
+		查找满足条件得数组元素 返回第一个查找到数组元素或者是undefiend
+	})
+	findIndex((item,index,arr)=>{
+		查找满足条件得数组元素 返回第一个查找到数组元素下标或者是-1
+	})
+	flat(n/Infinity)
+	flatmap(()=>{
+
+	})
+	keys() 返回的是一个迭代器对象 
+	values() 返回的是一个迭代器对象
+	entries() 返回的是一个迭代器对象
+7.String类型api拓展
+8.类 
+	class Person{
+
+	}
+	等同于
+	class Person{
+		constructor(){
+
+		}
+	}
+	实例属性和实例方法
+		由实例可以去调用
+		写在类体构造器中得属性是实例私有属性
+		写在类中方法是实例公共方法
+	静态属性和静态方法
+		由类本身去调用
+		写在类体中使用static关键字声明属性和方法就是静态属性和静态方法
+
+
+	
